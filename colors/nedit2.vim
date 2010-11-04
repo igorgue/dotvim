@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/colors/nedit2.vim

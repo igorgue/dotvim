@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/colors/black_angus.vim

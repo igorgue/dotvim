@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/colors/ps_color.vim
