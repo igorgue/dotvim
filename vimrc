@@ -75,10 +75,9 @@ let Tlist_Use_Right_Window = 1            " Project uses the left window
 let Tlist_File_Fold_Auto_Close = 1        " Close folds for inactive files
 
 " useful keyboard-shortcuts
-map <F2> :marks 
-map <F3> :NERDTreeToggle<CR>
-map <F4> :TlistToggle<CR>
-map <F5> :noh<CR>
+map <F2> :NERDTreeToggle<CR>
+map <F3> :TlistToggle<CR>
+map <F4> :noh<CR>
 
 if has("autocmd")
   " code indentation
