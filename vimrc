@@ -8,10 +8,8 @@ set background=dark
 syntax on
 
 if has("gui_running")
-  if has("gui_gtk2")
-    colorscheme ir_black
-    set guifont=Inconsolata\ 10
-  endif
+  colorscheme ir_black
+  set guifont=Inconsolata\ 10
 else
   colorscheme elflord
 endif
@@ -49,6 +47,11 @@ set modelines=3     " number of lines checked for modelines
 set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
+set list
+
+if !has("mac") && has("gui_running")
+  set t_Co=256
+endif
 
 set viminfo='20,<50,s10,h
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
