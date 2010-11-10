@@ -7,12 +7,13 @@
 set background=dark
 syntax on
 
-colorscheme candy
-
 if has("gui_running")
   if has("gui_gtk2")
+    colorscheme ir_black
     set guifont=Inconsolata\ 10
   endif
+else
+  colorscheme elflord
 endif
 
 set mouse=a         " enable mouse
@@ -48,7 +49,7 @@ set modelines=3     " number of lines checked for modelines
 set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
-set t_Co=256
+
 set viminfo='20,<50,s10,h
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -68,16 +69,27 @@ let NERDTreeShowBookmarks=1
 set tags=tags;$HOME/.vim/tags/ "recursively searches directory for 'tags' file
 
 " TagList Plugin Configuration
-let Tlist_Ctags_Cmd='/usr/bin/ctags' 	    " point taglist to ctags
+if has("gui_macvim")
+  let Tlist_Ctags_Cmd='/usr/local/bin/ctags' " point taglist to ctags
+else
+  let Tlist_Ctags_Cmd='/usr/bin/ctags' 	     " point taglist to ctags
+endif
+
 let Tlist_GainFocus_On_ToggleOpen = 1     " Focus on the taglist when its toggled
 let Tlist_Close_On_Select = 1             " Close when something's selected
 let Tlist_Use_Right_Window = 1            " Project uses the left window
 let Tlist_File_Fold_Auto_Close = 1        " Close folds for inactive files
 
 " useful keyboard-shortcuts
-map <F2> :NERDTreeToggle<CR>
-map <F3> :TlistToggle<CR>
-map <F4> :noh<CR>
+if has("gui_macvim")
+  map <D-3> :NERDTreeToggle<CR>
+  map <D-2> :TlistToggle<CR>
+  map <D-4> :noh<CR>
+else
+  map <F2> :NERDTreeToggle<CR>
+  map <F3> :TlistToggle<CR>
+  map <F4> :noh<CR>
+endif
 
 if has("autocmd")
   " code indentation
