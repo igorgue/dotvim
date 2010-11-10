@@ -47,7 +47,6 @@ set modelines=3     " number of lines checked for modelines
 set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
-set list
 
 if !has("mac") && has("gui_running")
   set t_Co=256
