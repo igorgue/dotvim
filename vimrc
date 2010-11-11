@@ -2,16 +2,13 @@
 "
 " get the plugins from http://github.com/igorgue/dotvim
 
-" here I put all the colors schemes I like
-
 set background=dark
 syntax on
 
+colorscheme candy
+
 if has("gui_running")
-  colorscheme candy
   set guifont=Inconsolata\ 10
-else
-  colorscheme elflord
 endif
 
 set mouse=a         " enable mouse
@@ -47,10 +44,7 @@ set modelines=3     " number of lines checked for modelines
 set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
-
-if !has("mac") && has("gui_running")
-  set t_Co=256
-endif
+set t_Co=256
 
 set viminfo='20,<50,s10,h
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
