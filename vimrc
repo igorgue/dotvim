@@ -8,7 +8,7 @@ set background=dark
 syntax on
 
 if has("gui_running")
-  colorscheme ir_black
+  colorscheme candy
   set guifont=Inconsolata\ 10
 else
   colorscheme elflord
@@ -101,6 +101,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.ru setfiletype ruby
   au BufNewFile,BufRead .vimrc setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au BufNewFile,BufRead Gemfile setfiletype ruby
+  au BufNewFile,BufRead Capfile setfiletype ruby
 endif
 
 " shortcut to rapidly toggle `set list`
