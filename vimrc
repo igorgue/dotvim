@@ -84,8 +84,8 @@ let Tlist_File_Fold_Auto_Close = 1        " Close folds for inactive files
 
 " useful keyboard-shortcuts
 if has("gui_macvim")
-  map <D-3> :NERDTreeToggle<CR>
-  map <D-2> :TlistToggle<CR>
+  map <D-2> :NERDTreeToggle<CR>
+  map <D-3> :TlistToggle<CR>
   map <D-4> :noh<CR>
 else
   map <F2> :NERDTreeToggle<CR>
