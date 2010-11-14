@@ -44,7 +44,10 @@ set modelines=3     " number of lines checked for modelines
 set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
-set t_Co=256
+
+if has("mac") && !has("gui_running")
+  set t_Co=256
+endif
 
 set viminfo='20,<50,s10,h
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
@@ -65,7 +68,7 @@ let NERDTreeShowBookmarks=1
 set tags=tags;$HOME/.vim/tags/ "recursively searches directory for 'tags' file
 
 " TagList Plugin Configuration
-if has("gui_macvim")
+if has("mac")
   let Tlist_Ctags_Cmd='/usr/local/bin/ctags' " point taglist to ctags
 else
   let Tlist_Ctags_Cmd='/usr/bin/ctags' 	     " point taglist to ctags
@@ -77,7 +80,7 @@ let Tlist_Use_Right_Window = 1            " Project uses the left window
 let Tlist_File_Fold_Auto_Close = 1        " Close folds for inactive files
 
 " useful keyboard-shortcuts
-if has("gui_macvim")
+if has("mac")
   map <D-2> :NERDTreeToggle<CR>
   map <D-3> :TlistToggle<CR>
   map <D-4> :noh<CR>
