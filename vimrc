@@ -92,13 +92,19 @@ endif
 
 if has("autocmd")
   " code indentation
-  au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au BufNewFile,BufRead *.html setfiletype htmldjango
   au BufNewFile,BufRead *.go setfiletype go
   au BufNewFile,BufRead *.feature setfiletype ruby
+  au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au BufNewFile,BufRead *.ru setfiletype ruby
   au BufNewFile,BufRead .vimrc setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au BufNewFile,BufRead Gemfile setfiletype ruby
   au BufNewFile,BufRead Capfile setfiletype ruby
+  au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au FileType xhtml setfiletype htmldjango
+  au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
 endif
 
 " shortcut to rapidly toggle `set list`
