@@ -93,7 +93,6 @@ endif
 if has("autocmd")
   " code indentation
   au BufNewFile,BufRead *.html setfiletype htmldjango
-  au BufNewFile,BufRead *.go setfiletype go
   au BufNewFile,BufRead *.feature setfiletype ruby
   au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au BufNewFile,BufRead *.ru setfiletype ruby
