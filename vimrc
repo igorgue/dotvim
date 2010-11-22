@@ -5,10 +5,11 @@
 set background=dark
 syntax on
 
-colorscheme railscasts2
-
 if has("gui_running")
   set guifont=Inconsolata\ 10
+  colorscheme railscasts2
+else
+  colorscheme dante
 endif
 
 set mouse=a         " enable mouse
