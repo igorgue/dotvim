@@ -5,7 +5,7 @@
 set background=dark
 syntax on
 
-colorscheme candy
+colorscheme railscasts2
 
 if has("gui_running")
   set guifont=Inconsolata\ 10
