@@ -46,6 +46,10 @@ set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
 
+if has("gui_running")
+  set undofile
+endif
+
 if has("mac") && !has("gui_running")
   set t_Co=256
 endif
@@ -109,6 +113,9 @@ endif
 
 " shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+
+" shortcut to search in project
+nnoremap <leader>a :Ack 
  
 " use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
