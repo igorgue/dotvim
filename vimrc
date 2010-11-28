@@ -116,6 +116,9 @@ nmap <leader>l :set list!<CR>
 
 " shortcut to search in project
 nnoremap <leader>a :Ack 
+
+" shortcut to map ; to :
+nnoremap ; :
  
 " use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
