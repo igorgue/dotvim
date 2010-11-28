@@ -7,7 +7,7 @@ syntax on
 
 if has("gui_running")
   set guifont=Inconsolata\ 10
-  colorscheme railscasts2
+  colorscheme vividchalk
 else
   colorscheme dante
 endif
