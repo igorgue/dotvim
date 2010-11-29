@@ -9,7 +9,7 @@ if has("gui_running")
   set guifont=Inconsolata\ 10
   colorscheme vividchalk
 else
-  colorscheme dante
+  colorscheme dante 
 endif
 
 set mouse=a         " enable mouse
@@ -46,7 +46,7 @@ set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
 
-if has("gui_running")
+if has("gui_running") && has("undofile") 
   set undofile
 endif
 

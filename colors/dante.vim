@@ -12,6 +12,8 @@ if exists("syntax on")
 endif
 let g:colors_name = "dante"
 
+set background=dark
+
 " General colors
 hi Normal       ctermfg=gray guifg=peachpuff3 guibg=black
 hi Directory    term=bold ctermfg=blue guifg=royalblue
