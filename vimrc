@@ -9,7 +9,7 @@ if has("gui_running")
   set guifont=Inconsolata\ 10
   colorscheme vividchalk
 else
-  colorscheme dante 
+  colorscheme peaksea 
 endif
 
 set mouse=a         " enable mouse
