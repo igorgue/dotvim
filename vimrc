@@ -63,8 +63,6 @@ let python_highlight_space_errors=0
 
 filetype plugin indent on " turn on the indent plugins
 
-au FileType djangohtml,html,xhtml,xml source ~/.vim/plugin/closetag.vim
-
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 
