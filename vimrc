@@ -46,7 +46,7 @@ set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
 
-if has("gui_running") && has("undofile") 
+if has("undofile")
   set undofile
 endif
 
@@ -62,8 +62,6 @@ let python_highlight_indent_errors=0
 let python_highlight_space_errors=0
 
 filetype plugin indent on " turn on the indent plugins
-
-au FileType djangohtml,html,xhtml,xml source ~/.vim/plugin/closetag.vim
 
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
@@ -97,7 +95,6 @@ endif
 
 if has("autocmd")
   " code indentation
-  au BufNewFile,BufRead *.html setfiletype htmldjango
   au BufNewFile,BufRead *.feature setfiletype ruby
   au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au BufNewFile,BufRead *.ru setfiletype ruby
@@ -107,12 +104,12 @@ if has("autocmd")
   au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au FileType xhtml setfiletype htmldjango
   au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
 endif
 
 " shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+nmap <leader>d :set ft=htmldjango<CR>
 
 " shortcut to search in project
 nnoremap <leader>a :Ack 
