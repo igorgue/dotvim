@@ -8,9 +8,10 @@ syntax on
 if has("gui_running")
   set guifont=Inconsolata\ 10
   colorscheme vividchalk
-else
-  colorscheme dante 
+"else
+  "colorscheme dante 
 endif
+colorscheme vividchalk
 
 set mouse=a         " enable mouse
 set nocompatible    " use vim defaults
