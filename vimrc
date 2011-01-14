@@ -10,7 +10,9 @@ if has("gui_running")
   colorscheme vividchalk
 else
   colorscheme peaksea 
+  "colorscheme dante 
 endif
+colorscheme vividchalk
 
 set mouse=a         " enable mouse
 set nocompatible    " use vim defaults
