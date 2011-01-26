@@ -7,11 +7,8 @@ syntax on
 
 if has("gui_running")
   set guifont=Inconsolata\ 10
-  colorscheme vividchalk
-else
-  colorscheme peaksea 
-  "colorscheme dante 
 endif
+
 colorscheme vividchalk
 
 set mouse=a         " enable mouse
@@ -104,6 +101,9 @@ if has("autocmd")
   au BufNewFile,BufRead Gemfile setfiletype ruby
   au BufNewFile,BufRead Capfile setfiletype ruby
   au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au FileType haskell setlocal ai
+  au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
