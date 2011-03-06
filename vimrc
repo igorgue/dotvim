@@ -5,10 +5,6 @@
 set background=dark
 syntax on
 
-if has("gui_running")
-  set guifont=Inconsolata\ 10
-endif
-
 colorscheme vividchalk
 
 set mouse=a         " enable mouse
