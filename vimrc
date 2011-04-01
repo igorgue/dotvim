@@ -4,12 +4,11 @@
 
 set background=dark
 syntax on
+"set background=light
 
-if has("gui_running")
-  set guifont=Inconsolata\ 10
-endif
+set guifont=Anonymous\ Pro\ 14
 
-colorscheme vividchalk
+colorscheme solarized
 
 set mouse=a         " enable mouse
 set nocompatible    " use vim defaults
@@ -27,7 +26,9 @@ set ruler           " show the cursor position all the time
 set laststatus=2
 set visualbell t_vb=    " turn off error beep/flash
 set novisualbell    " turn off visual bell
-set nobackup        " do not keep a backup file
+"set nobackup        " do not keep a backup file
+"set nowritebackup   " only in case you don't want a backup file while editing
+"set noswapfile      " no swap files
 set number          " show line numbers
 set numberwidth=4   " line numbering takes up to 4 spaces
 set ignorecase      " ignore case when searching
@@ -44,6 +45,8 @@ set modelines=3     " number of lines checked for modelines
 set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
+set backupdir=/tmp
+set list            " show list chars
 
 if has("undofile")
   set undofile
@@ -55,7 +58,7 @@ endif
 
 set viminfo='20,<50,s10,h
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 let python_highlight_all=1
 let python_highlight_indent_errors=0
 let python_highlight_space_errors=0
