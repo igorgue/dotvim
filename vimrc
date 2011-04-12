@@ -6,7 +6,7 @@ set background=dark
 syntax on
 "set background=light
 
-set guifont=Anonymous\ Pro\ 14
+set guifont=Bitstream\ Vera\ Sans\ 12
 
 colorscheme solarized
 
@@ -73,22 +73,20 @@ let NERDTreeShowBookmarks=1
 set tags=tags;$HOME/.vim/tags/ "recursively searches directory for 'tags' file
 
 " TagList Plugin Configuration
-if has("mac")
-  let Tlist_Ctags_Cmd='/usr/local/bin/ctags' " point taglist to ctags
-else
-  let Tlist_Ctags_Cmd='/usr/bin/ctags' 	     " point taglist to ctags
-endif
+let Tlist_Ctags_Cmd='ctags' " point taglist to ctags
 
 let Tlist_GainFocus_On_ToggleOpen = 1     " Focus on the taglist when its toggled
 let Tlist_Close_On_Select = 1             " Close when something's selected
 let Tlist_Use_Right_Window = 1            " Project uses the left window
 let Tlist_File_Fold_Auto_Close = 1        " Close folds for inactive files
 
-" useful keyboard-shortcuts
+" Useful keyboard-shortcuts
 if has("mac")
   map <D-2> :NERDTreeToggle<CR>
   map <D-3> :TlistToggle<CR>
   map <D-4> :noh<CR>
+  map <D-j> gj
+  map <D-k> gk
 else
   map <F2> :NERDTreeToggle<CR>
   map <F3> :TlistToggle<CR>

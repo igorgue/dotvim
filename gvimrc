@@ -1,8 +1,6 @@
 set guioptions-=T
 
-set guifont=Anonymous\ Pro:h14
-
-set background=dark
+set guifont=Inconsolata:h14
 
 "colorscheme white
 "colorscheme candycode
