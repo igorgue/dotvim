@@ -6,7 +6,7 @@ set background=dark
 syntax on
 "set background=light
 
-set guifont=Bitstream\ Vera\ Sans\ 12
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
 
 colorscheme solarized
 
@@ -124,11 +124,11 @@ nnoremap ; :
 set listchars=tab:▸\ ,eol:¬
 
 " force myself to use hjkl (LOLs)
-map <up> iisuckatvi
-map <down> iisuckatvi
-map <left> iisuckatvi
-map <right> iisuckatvi
-imap <up> isuckatvi
-imap <down> isuckatvi
-imap <left> isuckatvi
-imap <right> isuckatvi
+"map <up> iisuckatvi
+"map <down> iisuckatvi
+"map <left> iisuckatvi
+"map <right> iisuckatvi
+"imap <up> isuckatvi
+"imap <down> isuckatvi
+"imap <left> isuckatvi
+"imap <right> isuckatvi
