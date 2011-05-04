@@ -8,7 +8,7 @@ syntax on
 
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
 
-colorscheme solarized
+colorscheme vividchalk
 
 set mouse=a         " enable mouse
 set nocompatible    " use vim defaults
@@ -46,7 +46,7 @@ set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 set undolevels=200
 set backupdir=/tmp
-set list            " show list chars
+"set list            " show list chars
 
 if has("undofile")
   set undofile
@@ -64,6 +64,9 @@ let python_highlight_indent_errors=0
 let python_highlight_space_errors=0
 
 filetype plugin indent on " turn on the indent plugins
+
+" omni completion
+set ofu=syntaxcomplete#Complete
 
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
