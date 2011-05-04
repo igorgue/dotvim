@@ -1,10 +1,10 @@
 set guioptions-=T
 
-set guifont=Anonymous\ Pro:h14
-
-set background=dark
+set guifont=Bitstream\ Vera\ Sans\ Mono:h14
 
 "colorscheme white
-"colorscheme candycode
+"colorscheme candy
+colorscheme candycode
 "colorscheme ir_black
-colorscheme solarized
+"colorscheme solarized
+"colorscheme vividchalk
