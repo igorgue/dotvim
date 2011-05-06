@@ -86,16 +86,15 @@ let Tlist_File_Fold_Auto_Close = 1        " Close folds for inactive files
 " Useful keyboard-shortcuts
 if has("mac")
   map <D-2> :NERDTreeToggle<CR>
-  map <D-3> :TlistToggle<CR>
+  map <D-3> :TagbarToggle<CR>
   map <D-4> :noh<CR>
   nnoremap <D-9> :TagbarToggle<CR>
   map <D-j> gj
   map <D-k> gk
 else
   map <F2> :NERDTreeToggle<CR>
-  map <F3> :TlistToggle<CR>
+  map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
-  nnoremap <silent> <F9> :TagbarToggle<CR>
 endif
 
 if has("autocmd")
