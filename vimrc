@@ -58,7 +58,7 @@ endif
 
 set viminfo='20,<50,s10,h
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
-set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ type=%y\ lines=%L\ %p%%\ %4lline,%4vcol
 let python_highlight_all=1
 let python_highlight_indent_errors=0
 let python_highlight_space_errors=0
@@ -106,6 +106,7 @@ if has("autocmd")
   au BufNewFile,BufRead Gemfile setfiletype ruby
   au BufNewFile,BufRead Capfile setfiletype ruby
   au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+  au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType haskell setlocal ai
   au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -119,7 +120,7 @@ nmap <leader>l :set list!<CR>
 nmap <leader>d :set ft=htmldjango<CR>
 
 " shortcut to search in project
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack "
 
 " shortcut to map ; to :
 nnoremap ; :
