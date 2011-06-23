@@ -8,6 +8,7 @@ syntax on
 
 colorscheme vividchalk
 
+let mapleader=","
 set mouse=a         " enable mouse
 set nocompatible    " use vim defaults
 set ls=2            " always show status line
@@ -52,6 +53,7 @@ set hls
 set wildmode=longest,list
 set switchbuf=useopen
 set showtabline=2
+set hidden
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
