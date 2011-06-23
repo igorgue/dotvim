@@ -3,10 +3,8 @@
 " get the plugins from http://github.com/igorgue/dotvim
 
 set background=dark
-syntax on
 "set background=light
-
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+syntax on
 
 colorscheme vividchalk
 
@@ -47,6 +45,16 @@ set nostartofline   " don't jump to first character when paging
 set undolevels=200
 set backupdir=/tmp
 "set list            " show list chars
+set shell=bash      " Annoying bug with the PATH and zsh
+set wildmenu
+set textwidth=78
+set hls
+set wildmode=longest,list
+set switchbuf=useopen
+set showtabline=2
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
 
 if has("undofile")
   set undofile
@@ -58,7 +66,8 @@ endif
 
 set viminfo='20,<50,s10,h
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
-set statusline=%F%m%r%h%w\ type=%y\ lines=%L\ %p%%\ %4lline,%4vcol
+set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)
+hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 let python_highlight_all=1
 let python_highlight_indent_errors=0
 let python_highlight_space_errors=0
@@ -114,6 +123,12 @@ if has("autocmd")
   au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
   au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
 endif
+
+" Map ,e to open files in the same directory as the current file
+map <leader>e :e <C-R>=expand("%:h")<cr>/
+
+" Seriously, guys. It's not like :W is bound to anything anyway.
+command! W :w
 
 " shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
