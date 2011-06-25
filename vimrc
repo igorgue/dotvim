@@ -48,7 +48,7 @@ set backupdir=/tmp
 "set list            " show list chars
 set shell=bash      " Annoying bug with the PATH and zsh
 set wildmenu
-set textwidth=78
+"set textwidth=78
 set hls
 set wildmode=longest,list
 set switchbuf=useopen
