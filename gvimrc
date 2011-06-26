@@ -2,7 +2,11 @@ set guioptions-=T
 set guioptions-=L
 set guioptions-=r
 
-set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+if has("mac")
+  set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+else
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+endif
 
 "colorscheme white
 "colorscheme candy
