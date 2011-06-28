@@ -1,1 +1,0 @@
-/usr/share/vim-scripts/colors/edo_sea.vim
