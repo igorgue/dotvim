@@ -7,7 +7,7 @@ if has("gui_macvim")
     set guioptions-=r
 
     "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
-    set guifont=Anonymous\ Pro:h12
+    set guifont=Anonymous\ Pro:h14
 
     " Command-F for CommandT
     map <D-F> :PeepOpen<CR>
