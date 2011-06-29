@@ -52,7 +52,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set f
 au BufNewFile,BufRead *.json set ft=javascript
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
 
 " Python highlighting errors
 let python_highlight_all=1
@@ -167,6 +167,7 @@ function TalibanMode()
     imap <left> isuckatvi
     imap <right> isuckatvi
 endfunction
+command! TalibanMode call TalibanMode()
 
 " All the small things(tm)
 set mouse=a         " enable mouse
