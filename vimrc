@@ -6,7 +6,6 @@ call pathogen#infect() " Pathogen magic
 " Set syntax highlighting
 set background=dark
 syntax on
-colorscheme vividchalk
 
 set nocompatible    " use vim defaults
 set number          " show line numbers
