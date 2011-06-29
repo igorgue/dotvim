@@ -9,8 +9,11 @@ if has("gui_macvim")
     "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
     set guifont=Anonymous\ Pro:h14
 
-    " Command-Shift-F for Ack
-    map <D-F> :Ack<space>"
+    " Command-F for CommandT
+    map <D-F> :PeepOpen<CR>
+
+    " Command-Return for fullscreen
+    macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
     " Command-/ to toggle comments
     map <D-/> <plug>NERDCommenterToggle<CR>
@@ -18,6 +21,9 @@ if has("gui_macvim")
 
     " Don't beep
     set visualbell
+
+    " Command-e for ConqueTerm
+    map <D-e> :call StartTerm()<CR>
 
     "colorscheme white
     "colorscheme candy
