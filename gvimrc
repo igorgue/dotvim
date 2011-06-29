@@ -6,7 +6,8 @@ if has("gui_macvim")
     set guioptions-=L
     set guioptions-=r
 
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+    "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
+    set guifont=Anonymous\ Pro:h14
 
     " Command-Shift-F for Ack
     map <D-F> :Ack<space>"
@@ -23,7 +24,9 @@ if has("gui_macvim")
     "colorscheme candycode
     "colorscheme ir_black
     "colorscheme solarized
-    colorscheme vividchalk
+    "colorscheme vividchalk
+    "colorscheme molokai
+    colorscheme molokai+
     "colorscheme grb4
 endif
 
