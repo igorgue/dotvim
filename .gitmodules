@@ -25,3 +25,9 @@
 [submodule "bundle/vim-irblack"]
 	path = bundle/vim-irblack
 	url = git://github.com/wgibbs/vim-irblack.git
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = http://github.com/tpope/vim-repeat.git
+[submodule "bundle/vim-gist"]
+	path = bundle/vim-gist
+	url = git://github.com/mattn/gist-vim.git
