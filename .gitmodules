@@ -1,3 +1,18 @@
 [submodule "bundle/vim_color_sampler_pack"]
 	path = bundle/vim-color-sampler-pack
 	url = git://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "bundle/vim-ack"]
+	path = bundle/vim-ack
+	url = http://github.com/mileszs/ack.vim.git
+[submodule "bundle/vim-snipmate"]
+	path = bundle/vim-snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim-indent-object"]
+	path = vim-indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
