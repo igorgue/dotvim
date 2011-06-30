@@ -19,3 +19,6 @@
 [submodule "bundle/vim-rake"]
 	path = bundle/vim-rake
 	url = https://github.com/tpope/vim-rake
+[submodule "bundle/vim-snipmate-for-django"]
+	path = bundle/vim-snipmate-for-django
+	url = https://github.com/robhudson/snipmate_for_django.git
