@@ -1,6 +1,5 @@
 " Igor's VIM configuration file
 "
-" get the plugins from http://github.com/igorgue/dotvim
 call pathogen#infect() " Pathogen magic
 
 " Set syntax highlighting
