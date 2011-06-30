@@ -7,7 +7,7 @@ Install
 
 Run this from your terminal:
 
-curl https://raw.github.com/igorgue/dotvim/master/install.rb | ruby
+    curl https://raw.github.com/igorgue/dotvim/master/install.rb | ruby
 
 Y U NO TRUST ME?
 
@@ -15,12 +15,12 @@ Y U NO TRUST ME?
 
 Get it from git:
 
-cd $HOME
-git clone git://github.com/igorgue/dotvim.git .vim
+    cd $HOME
+    git clone git://github.com/igorgue/dotvim.git .vim
 
-ln -s $HOME/.vim/vimrc $HOME/.vimrc
-ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
+    ln -s $HOME/.vim/vimrc $HOME/.vimrc
+    ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
 
-cd $HOME/.vim
-git submodule init
-git submodule update
+    cd $HOME/.vim
+    git submodule init
+    git submodule update
