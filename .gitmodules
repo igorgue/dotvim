@@ -62,20 +62,41 @@
     path = bundle/vim-tagbar
     url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle/vim-endwise"]
-	path = bundle/vim-endwise
-	url = https://github.com/tpope/vim-endwise.git
+    path = bundle/vim-endwise
+    url = https://github.com/tpope/vim-endwise.git
 [submodule "bundle/vim-speeddating"]
-	path = bundle/vim-speeddating
-	url = https://github.com/tpope/vim-speeddating.git
+    path = bundle/vim-speeddating
+    url = https://github.com/tpope/vim-speeddating.git
 [submodule "bundle/vim-nerdcommenter"]
-	path = bundle/vim-nerdcommenter
-	url = git://github.com/ddollar/nerdcommenter.git
+    path = bundle/vim-nerdcommenter
+    url = git://github.com/ddollar/nerdcommenter.git
 [submodule "vim-textile"]
-	path = vim-textile
-	url = git://github.com/timcharper/textile.vim.git
+    path = vim-textile
+    url = git://github.com/timcharper/textile.vim.git
 [submodule "vim-unimpaired"]
-	path = vim-unimpaired
+    path = vim-unimpaired
     url = http://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/vim-nerdtree"]
-	path = bundle/vim-nerdtree
-	url = git://github.com/wycats/nerdtree.git
+    path = bundle/vim-nerdtree
+    url = git://github.com/wycats/nerdtree.git
+[submodule "vim-abolish"]
+    path = vim-abolish
+    url = https://github.com/tpope/vim-abolish.git
+[submodule "vim-git"]
+    path = vim-git
+    url = https://github.com/tpope/vim-git.git
+[submodule "vim-vividchalk"]
+    path = vim-vividchalk
+    url = https://github.com/tpope/vim-vividchalk.git
+[submodule "bundle/vim-searchfold"]
+    path = bundle/vim-searchfold
+    url = git://github.com/vim-scripts/searchfold.vim.git
+[submodule "bundle/vim-align"]
+    path = bundle/vim-align
+    url = git://github.com/tsaleh/vim-align.git
+[submodule "bundle/vim-haml"]
+    path = bundle/vim-haml
+    url = https://github.com/tpope/vim-haml.git
+[submodule "bundle/vim-rails"]
+    path = bundle/vim-rails
+    url = https://github.com/tpope/vim-rails.git
