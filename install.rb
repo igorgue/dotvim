@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'readline'
-
 #
 # This script basically install the vim config,
 # puts your old confirations in a backup folder in home
@@ -76,18 +74,10 @@ def link_rc_files
 end
 
 if __FILE__ == $0
-  puts "Are you sure you want to install this awesome VIM config?".red
-  answer = Readline.readline(" [y|yes|n|no]".red, true)
-
-  if answer.to_s.start_with? 'y' or answer.to_s.start_with? 'Y'
-    puts "PRO TIP: You can put your own modifications in the ~/.vimrc.local and ~/.gvimrc.local files".green
-
-    puts "\n"
-    move_old_config
-    get_dotvim
-    link_rc_files
-  else
-    puts "Y U NO LIKE? wanna retry? copy and paste this:".yellow
-    puts "curl https://raw.github.com/igorgue/dotvim/master/install.rb | ruby".yellow
-  end
+  puts "PRO TIP: You can put your own modifications in the ~/.vimrc.local and ~/.gvimrc.local files".green
+  move_old_config
+  get_dotvim
+  link_rc_files
+  puts "Wanna retry? copy and paste this:".yellow
+  puts "curl https://raw.github.com/igorgue/dotvim/master/install.rb | ruby".yellow
 end
