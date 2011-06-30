@@ -22,3 +22,6 @@
 [submodule "bundle/vim-snipmate-for-django"]
 	path = bundle/vim-snipmate-for-django
 	url = https://github.com/robhudson/snipmate_for_django.git
+[submodule "bundle/vim-irblack"]
+	path = bundle/vim-irblack
+	url = git://github.com/wgibbs/vim-irblack.git
