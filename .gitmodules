@@ -1,4 +1,4 @@
-[submodule "bundle/vim_color_sampler_pack"]
+[submodule "bundle/vim-color-sampler-pack"]
 	path = bundle/vim-color-sampler-pack
 	url = git://github.com/vim-scripts/Color-Sampler-Pack.git
 [submodule "bundle/vim-ack"]
@@ -31,3 +31,18 @@
 [submodule "bundle/vim-gist"]
 	path = bundle/vim-gist
 	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/vim-supertab"]
+	path = bundle/vim-supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = git://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-rspec"]
+	path = bundle/vim-rspec
+	url = git://github.com/taq/vim-rspec.git
+[submodule "bundle/vim-syntastic"]
+	path = bundle/vim-syntastic
+	url = git://github.com/scrooloose/syntastic.git
