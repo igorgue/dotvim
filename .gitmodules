@@ -64,3 +64,18 @@
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/vim-speeddating"]
+	path = bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule "bundle/vim-nerdcommenter"]
+	path = bundle/vim-nerdcommenter
+	url = git://github.com/ddollar/nerdcommenter.git
+[submodule "vim-textile"]
+	path = vim-textile
+	url = git://github.com/timcharper/textile.vim.git
+[submodule "vim-unimpaired"]
+	path = vim-unimpaired
+    url = http://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/vim-nerdtree"]
+	path = bundle/vim-nerdtree
+	url = git://github.com/wycats/nerdtree.git
