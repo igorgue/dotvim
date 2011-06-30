@@ -70,25 +70,25 @@
 [submodule "bundle/vim-nerdcommenter"]
     path = bundle/vim-nerdcommenter
     url = git://github.com/ddollar/nerdcommenter.git
-[submodule "vim-textile"]
-    path = vim-textile
+[submodule "bundle/vim-textile"]
+    path = bundle/vim-textile
     url = git://github.com/timcharper/textile.vim.git
-[submodule "vim-unimpaired"]
-    path = vim-unimpaired
+[submodule "bundle/vim-unimpaired"]
+    path = bundle/vim-unimpaired
     url = http://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/vim-nerdtree"]
     path = bundle/vim-nerdtree
     url = git://github.com/wycats/nerdtree.git
-[submodule "vim-abolish"]
-    path = vim-abolish
+[submodule "bundle/vim-abolish"]
+    path = bundle/vim-abolish
     url = https://github.com/tpope/vim-abolish.git
-[submodule "vim-git"]
-    path = vim-git
+[submodule "bundle/vim-git"]
+    path = bundle/vim-git
     url = https://github.com/tpope/vim-git.git
-[submodule "vim-vividchalk"]
-    path = vim-vividchalk
+[submodule "bundle/vim-vividchalk"]
+    path = bundle/vim-vividchalk
     url = https://github.com/tpope/vim-vividchalk.git
-[submodule "bundle/vim-searchfold"]
+[submodule "bundle/bundle/vim-searchfold"]
     path = bundle/vim-searchfold
     url = git://github.com/vim-scripts/searchfold.vim.git
 [submodule "bundle/vim-align"]
