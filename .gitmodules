@@ -46,3 +46,15 @@
 [submodule "bundle/vim-syntastic"]
 	path = bundle/vim-syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-cucumber"]
+	path = bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "bundle/vim-scala"]
+	path = bundle/vim-scala
+	url = git://github.com/bdd/vim-scala.git
+[submodule "bundle/vim-jslint"]
+	path = bundle/vim-jslint
+	url = git://github.com/hallettj/jslint.vim.git
