@@ -76,9 +76,9 @@ def link_rc_files
 end
 
 if __FILE__ == $0
-  answer = Readline.readline("Are you sure you want to install this awesome VIM config? [y|yes|n|no] ".red)
+  answer = Readline.readline("Are you sure you want to install this awesome VIM config? [y|yes|n|no] ".red, true)
 
-  if answer.start_with? 'y' or answer.start_with? 'Y'
+  if answer.to_s.start_with? 'y' or answer.to_s.start_with? 'Y'
     puts "PRO TIP: You can put your own modifications in the ~/.vimrc.local and ~/.gvimrc.local files".green
 
     puts "\n"
