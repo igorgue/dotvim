@@ -29,7 +29,8 @@ if has("gui_macvim")
     "colorscheme solarized
     "colorscheme vividchalk
     "colorscheme molokai
-    colorscheme molokai+
+    "colorscheme molokai+
+    colorscheme darkbone
     "colorscheme grb4
 endif
 
