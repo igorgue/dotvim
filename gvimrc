@@ -22,9 +22,6 @@ if has("gui_macvim")
     " Don't beep
     set visualbell
 
-    " Command-e for ConqueTerm
-    map <D-e> :call StartTerm()<CR>
-
     "colorscheme white
     "colorscheme candy
     "colorscheme candycode

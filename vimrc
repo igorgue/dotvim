@@ -28,7 +28,7 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Tab completion
+" Completion
 set wildmenu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.pyc,*.DS_Store,*.db
