@@ -100,3 +100,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-pony"]
+	path = bundle/vim-pony
+	url = https://github.com/rainerborene/vim-pony.git
