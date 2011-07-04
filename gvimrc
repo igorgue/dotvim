@@ -19,6 +19,9 @@ if has("gui_macvim")
     map <D-/> <plug>NERDCommenterToggle<CR>
     imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
+    " Gist command
+    let g:gist_clip_command = 'pbcopy'
+
     " Don't beep
     set visualbell
 
