@@ -117,6 +117,11 @@ else
   map <F4> :noh<CR>
 endif
 
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 if has("autocmd")
   " code indentation
   au BufNewFile,BufRead *.feature setfiletype ruby
