@@ -59,6 +59,7 @@ hi Todo  guifg=#b4df61 guibg=NONE gui=inverse,bold
 hi Type  guifg=#b998df guibg=NONE gui=NONE
 hi Underlined  guifg=NONE guibg=NONE gui=underline
 hi rubyClass  guifg=#a3aad8 guibg=NONE gui=bold
+hi pythonStatement  guifg=#a3aad8 guibg=NONE gui=bold
 hi rubyFunction  guifg=#dfcc94 guibg=NONE gui=bold
 hi rubyInterpolationDelimiter  guifg=NONE guibg=NONE gui=NONE
 hi rubySymbol  guifg=#dfca53 guibg=NONE gui=bold
