@@ -103,3 +103,6 @@
 [submodule "bundle/vim-pony"]
 	path = bundle/vim-pony
 	url = https://github.com/rainerborene/vim-pony.git
+[submodule "bundle/vim-tabular"]
+	path = bundle/vim-tabular
+	url = https://github.com/godlygeek/tabular.git
