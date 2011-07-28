@@ -14,13 +14,13 @@ endif
 
 let g:colors_name = "danger"
 
-hi Cursor  guifg=#000000 guibg=#7d7d7a gui=NONE
-hi Visual  guifg=NONE guibg=#555577 gui=NONE
+hi Cursor  guifg=#000000 guibg=#ffb376 gui=NONE
+hi Visual  guifg=#000000 guibg=#ffb376 gui=NONE
 hi CursorLine  guifg=NONE guibg=#282828 gui=NONE
 hi CursorColumn  guifg=NONE guibg=#282828 gui=NONE
-hi LineNr  guifg=#7d7e7a guibg=#2b2b2b gui=NONE
+hi LineNr  guifg=#515150 guibg=#2b2b2b gui=NONE
 hi VertSplit  guifg=#454543 guibg=#454543 gui=NONE
-hi MatchParen  guifg=#a3aad8 guibg=NONE gui=NONE
+hi MatchParen  guifg=#000000 guibg=#ffb376 gui=NONE
 hi StatusLine  guifg=#d8d9d1 guibg=#454543 gui=bold
 hi StatusLineNC  guifg=#d8d9d1 guibg=#454543 gui=NONE
 hi Pmenu  guifg=NONE guibg=NONE gui=NONE
@@ -30,7 +30,7 @@ hi Search  guifg=NONE guibg=#4d4f5e gui=NONE
 hi Directory  guifg=#dfca53 guibg=NONE gui=NONE
 hi Folded  guifg=#b4df61 guibg=#222222 gui=NONE
 
-hi Normal  guifg=#d8d9d1 guibg=#1e1e1e gui=NONE
+hi Normal  guifg=#dcdcd9 guibg=#1e1e1e gui=NONE
 hi Boolean  guifg=#edb272 guibg=NONE gui=NONE
 hi Character  guifg=#dfca53 guibg=NONE gui=NONE
 hi Comment  guifg=#83a347 guibg=NONE gui=italic
@@ -52,17 +52,19 @@ hi Special  guifg=#d8d9d1 guibg=NONE gui=NONE
 hi SpecialKey  guifg=#e5e5b2 guibg=#282828 gui=NONE
 hi Statement  guifg=#dfc346 guibg=NONE gui=bold
 hi StorageClass  guifg=#dbbfed guibg=NONE gui=NONE
-hi String  guifg=#acc6d7 guibg=NONE gui=NONE
+hi String  guifg=#acc6d7 guibg=#303034 gui=NONE
 hi Tag  guifg=NONE guibg=NONE gui=NONE
 hi Title  guifg=#d8d9d1 guibg=NONE gui=bold
 hi Todo  guifg=#b4df61 guibg=NONE gui=inverse,bold
 hi Type  guifg=#b998df guibg=NONE gui=NONE
 hi Underlined  guifg=NONE guibg=NONE gui=underline
-hi rubyClass  guifg=#a3aad8 guibg=NONE gui=bold
+
 hi pythonStatement  guifg=#a3aad8 guibg=NONE gui=bold
 hi pythonStrFormat  guifg=#a3aad8 guibg=NONE gui=italic
+
+hi rubyClass  guifg=#a3aad8 guibg=NONE gui=bold
 hi rubyFunction  guifg=#dfcc94 guibg=NONE gui=bold
-hi rubyInterpolationDelimiter  guifg=NONE guibg=NONE gui=NONE
+hi rubyInterpolationDelimiter  guifg=#a1c6d7 guibg=NONE gui=bold
 hi rubySymbol  guifg=#dfca53 guibg=NONE gui=bold
 hi rubyConstant  guifg=#a9a5d9 guibg=NONE gui=bold
 hi rubyStringDelimiter  guifg=#acc6d7 guibg=NONE gui=NONE
@@ -73,11 +75,11 @@ hi rubyGlobalVariable  guifg=#7ac0ed guibg=NONE gui=bold
 hi rubyRegexp  guifg=#acc6d7 guibg=NONE gui=NONE
 hi rubyRegexpDelimiter  guifg=#acc6d7 guibg=NONE gui=NONE
 hi rubyEscape  guifg=#dfca53 guibg=NONE gui=NONE
-hi rubyControl  guifg=#a3aad8 guibg=NONE gui=NONE
+hi rubyControl  guifg=#a3aad8 guibg=NONE gui=bold
 hi rubyClassVariable  guifg=NONE guibg=NONE gui=bold
 hi rubyOperator  guifg=#a3aad8 guibg=NONE gui=bold
 hi rubyException  guifg=#a3aad8 guibg=NONE gui=bold
-hi rubyPseudoVariable  guifg=#7ac0ed guibg=NONE gui=bold
+hi rubyPseudoVariable  guifg=#7ac0ed guibg=NONE gui=none
 hi rubyRailsUserClass  guifg=#a9a5d9 guibg=NONE gui=italic
 hi rubyRailsARAssociationMethod  guifg=#d9c589 guibg=NONE gui=italic
 hi rubyRailsARMethod  guifg=#d9c589 guibg=NONE gui=italic
@@ -87,7 +89,7 @@ hi erubyDelimiter  guifg=NONE guibg=NONE gui=NONE
 hi erubyComment  guifg=#b4df61 guibg=NONE gui=NONE
 hi erubyRailsMethod  guifg=#d9c589 guibg=NONE gui=NONE
 hi erubyExpression  guifg=#d9c589 guibg=NONE gui=NONE
-"hi rubyFunction  guifg=#dfcc94 guibg=NONE gui=bold
+
 hi htmlTag  guifg=#a3aad8 guibg=NONE gui=NONE
 hi htmlLink  guifg=NONE guibg=NONE gui=bold
 hi htmlEndTag  guifg=NONE guibg=NONE gui=NONE
@@ -95,13 +97,16 @@ hi htmlTagName  guifg=#dfcc94 guibg=NONE gui=NONE
 hi htmlSpecialTagName  guifg=#dfcc94 guibg=NONE gui=NONE
 hi htmlArg  guifg=#83a347 guibg=NONE gui=italic
 hi htmlSpecialChar  guifg=#dfca53 guibg=NONE gui=NONE
+
 hi javaScriptFunction  guifg=#dbbfed guibg=NONE gui=NONE
 hi javaScriptRailsFunction  guifg=#d9c589 guibg=NONE gui=NONE
 hi javaScriptBraces  guifg=NONE guibg=NONE gui=NONE
+
 hi yamlKey  guifg=NONE guibg=NONE gui=NONE
 hi yamlAnchor  guifg=#7ac0ed guibg=NONE gui=NONE
 hi yamlAlias  guifg=#7ac0ed guibg=NONE gui=NONE
 hi yamlDocumentHeader  guifg=#acc6d7 guibg=NONE gui=NONE
+
 hi cssURL  guifg=#85c6d9 guibg=NONE gui=NONE
 hi cssFunctionName  guifg=#d9c589 guibg=NONE gui=NONE
 hi cssColor  guifg=#dfca53 guibg=NONE gui=NONE
