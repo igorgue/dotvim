@@ -34,7 +34,7 @@ hi Normal  guifg=#dcdcd9 guibg=#1e1e1e gui=NONE
 hi Boolean  guifg=#edb272 guibg=NONE gui=NONE
 hi Character  guifg=#dfca53 guibg=NONE gui=NONE
 hi Comment  guifg=#83a347 guibg=NONE gui=italic
-hi Conditional  guifg=#a3aad8 guibg=NONE gui=NONE
+hi Conditional  guifg=#a3aad8 guibg=NONE gui=bold
 hi Constant  guifg=NONE guibg=NONE gui=NONE
 hi Define  guifg=#a3aad8 guibg=NONE gui=NONE
 hi ErrorMsg  guifg=#dfdfd5 guibg=#cc1b27 gui=NONE
