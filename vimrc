@@ -122,29 +122,30 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-if has("autocmd")
-  " code indentation
-  au BufNewFile,BufRead *.feature setfiletype ruby
-  au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au BufNewFile,BufRead *.ru setfiletype ruby
-  au BufNewFile,BufRead .vimrc setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au BufNewFile,BufRead Gemfile setfiletype ruby
-  au BufNewFile,BufRead Capfile setfiletype ruby
-  au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au FileType haskell setlocal ai
-  au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  au BufNewFile,BufRead admin.py setlocal filetype=python.django
-  au BufNewFile,BufRead urls.py setlocal filetype=python.django
-  au BufNewFile,BufRead models.py setlocal filetype=python.django
-  au BufNewFile,BufRead views.py setlocal filetype=python.django
-  au BufNewFile,BufRead settings.py setlocal filetype=python.django
-  au BufNewFile,BufRead forms.py setlocal filetype=python.django
-endif
+" code indentation and file detection
+au BufNewFile,BufRead .vimrc setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.feature setfiletype ruby
+au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.ru setfiletype ruby
+au BufNewFile,BufRead Gemfile setfiletype ruby
+au BufNewFile,BufRead Capfile setfiletype ruby
+
+au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4
+au FileType haskell setlocal ai
+au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+au BufNewFile,BufRead admin.py setlocal filetype=python.django
+au BufNewFile,BufRead urls.py setlocal filetype=python.django
+au BufNewFile,BufRead models.py setlocal filetype=python.django
+au BufNewFile,BufRead views.py setlocal filetype=python.django
+au BufNewFile,BufRead settings.py setlocal filetype=python.django
+au BufNewFile,BufRead forms.py setlocal filetype=python.django
 
 " Map ,e to open files in the same directory as the current file
 map <leader>e :e <C-R>=expand("%:h")<cr>/
@@ -206,6 +207,9 @@ set backupdir=/tmp
 set hls
 set showtabline=2
 set hidden
+
+" Some JSLINT settings
+let $JS_CMD='node'
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
