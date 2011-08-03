@@ -103,3 +103,6 @@
 [submodule "bundle/vim-tabular"]
 	path = bundle/vim-tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-nerdtree"]
+	path = bundle/vim-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
