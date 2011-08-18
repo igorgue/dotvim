@@ -37,6 +37,7 @@ hi Comment  guifg=#83a347 guibg=NONE gui=italic
 hi Conditional  guifg=#a3aad8 guibg=NONE gui=bold
 hi Constant  guifg=NONE guibg=NONE gui=NONE
 hi Define  guifg=#a3aad8 guibg=NONE gui=bold
+hi Error   guifg=NONE guibg=NONE gui=undercurl ctermfg=white ctermbg=red cterm=NONE guisp=#FF6C60 " undercurl color
 hi ErrorMsg  guifg=#dfdfd5 guibg=#cc1b27 gui=NONE
 hi WarningMsg  guifg=#dfdfd5 guibg=#cc1b27 gui=NONE
 hi Float  guifg=#e4d962 guibg=NONE gui=NONE
