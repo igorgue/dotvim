@@ -94,7 +94,7 @@ if has("undofile")
 endif
 
 set viminfo='20,<50,s10,h
-set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " omni completion
 set ofu=syntaxcomplete#Complete
@@ -211,6 +211,9 @@ set hidden
 
 " Some JSLINT settings
 let $JS_CMD='node'
+
+" Autoclean fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
