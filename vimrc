@@ -108,13 +108,14 @@ if has("mac")
   map <D-2> :NERDTreeToggle<CR>
   map <D-3> :TagbarToggle<CR>
   map <D-4> :noh<CR>
-  nnoremap <D-9> :TagbarToggle<CR>
+  map <D-5> :GundoToggle<CR>
   map <D-j> gj
   map <D-k> gk
 else
   map <F2> :NERDTreeToggle<CR>
   map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
+  map <F5> :GundoToggle<CR>
 endif
 
 map <C-h> <C-w>h
