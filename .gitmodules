@@ -109,3 +109,15 @@
 [submodule "bundle/vim-gundo"]
 	path = bundle/vim-gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/vim-delimitmate"]
+	path = bundle/vim-delimitmate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/vim-closetag"]
+	path = bundle/vim-closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "bundle/vim-pyflakes"]
+	path = bundle/vim-pyflakes
+	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "bundle/vim-csapprox"]
+	path = bundle/vim-csapprox
+	url = https://github.com/godlygeek/csapprox.git
