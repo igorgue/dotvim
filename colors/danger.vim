@@ -45,7 +45,7 @@ hi Function  guifg=#dfcc94 guibg=NONE gui=NONE
 hi Identifier  guifg=#dbbfed guibg=NONE gui=NONE
 hi Keyword  guifg=#a3aad8 guibg=NONE gui=bold
 hi Label  guifg=#acc6d7 guibg=NONE gui=NONE
-hi NonText  guifg=#e5e5b2 guibg=#1e1e1e gui=NONE
+hi NonText  guifg=#e5e5b2 guibg=#141414 gui=NONE
 hi Number  guifg=#e4d962 guibg=NONE gui=NONE
 hi Operator  guifg=#a3aad8 guibg=NONE gui=NONE
 hi PreProc  guifg=#a3aad8 guibg=NONE gui=NONE
