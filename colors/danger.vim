@@ -18,7 +18,7 @@ hi Cursor  guifg=#000000 guibg=#ffb376 gui=NONE
 hi Visual  guifg=#000000 guibg=#ffb376 gui=NONE
 hi CursorLine  guifg=NONE guibg=#282828 gui=NONE
 hi CursorColumn  guifg=NONE guibg=#282828 gui=NONE
-hi LineNr  guifg=#515150 guibg=#2b2b2b gui=NONE
+hi LineNr  guifg=#515150 guibg=NONE gui=NONE
 hi VertSplit  guifg=#454543 guibg=#454543 gui=NONE
 hi MatchParen  guifg=#FFFFFF guibg=#ffb376 gui=NONE
 hi StatusLine  guifg=#d8d9d1 guibg=#454543 gui=bold
@@ -30,7 +30,7 @@ hi Search  guifg=NONE guibg=#4d4f5e gui=inverse
 hi Directory  guifg=#dfca53 guibg=NONE gui=NONE
 hi Folded  guifg=#b4df61 guibg=#222222 gui=NONE
 
-hi Normal  guifg=#dcdcd9 guibg=#1e1e1e gui=NONE
+hi Normal  guifg=#dcdcd9 guibg=#141414 gui=NONE
 hi Boolean  guifg=#edb272 guibg=NONE gui=NONE
 hi Character  guifg=#dfca53 guibg=NONE gui=NONE
 hi Comment  guifg=#83a347 guibg=NONE gui=italic
@@ -51,9 +51,9 @@ hi Operator  guifg=#a3aad8 guibg=NONE gui=NONE
 hi PreProc  guifg=#a3aad8 guibg=NONE gui=NONE
 hi Special  guifg=#d8d9d1 guibg=NONE gui=NONE
 hi SpecialKey  guifg=#e5e5b2 guibg=#282828 gui=NONE
-hi Statement  guifg=#dfc346 guibg=NONE gui=bold
+hi Statement  guifg=#dfc346 guibg=NONE gui=NONE
 hi StorageClass  guifg=#dbbfed guibg=NONE gui=NONE
-hi String  guifg=#acc6d7 guibg=#303034 gui=NONE
+hi String  guifg=#acc6d7 guibg=NONE gui=NONE
 hi Tag  guifg=NONE guibg=NONE gui=NONE
 hi Title  guifg=#d8d9d1 guibg=NONE gui=bold
 hi Todo  guifg=#b4df61 guibg=NONE gui=inverse,bold

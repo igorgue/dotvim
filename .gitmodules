@@ -118,3 +118,6 @@
 [submodule "bundle/vim-csapprox"]
 	path = bundle/vim-csapprox
 	url = https://github.com/godlygeek/csapprox.git
+[submodule "bundle/vim-hexhighlight"]
+	path = bundle/vim-hexhighlight
+	url = https://github.com/vim-scripts/hexHighlight.vim.git
