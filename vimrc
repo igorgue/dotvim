@@ -133,7 +133,7 @@ au BufNewFile,BufRead Capfile setfiletype ruby
 
 au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4
+au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType haskell setlocal ai
 au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
