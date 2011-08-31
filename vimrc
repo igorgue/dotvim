@@ -189,6 +189,25 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+if has("cscope")
+  " uncoment this and set if vim can't find it
+  "set csprg=/usr/local/bin/cscope
+  set csto=0
+  set cst
+  set nocsverb
+  " add any database in current directory
+  if filereadable("cscope.out")
+    cs add cscope.out
+    " else add database pointed to by environment
+  elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+  endif
+  set csverb
+endif
+
+" Use ack to grep
+set grepprg=ack
+
 " All the small things(tm)
 set mouse=a         " enable mouse
 set ls=2            " always show status line
