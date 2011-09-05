@@ -60,6 +60,11 @@ hi Todo  guifg=#b4df61 guibg=NONE gui=inverse,bold
 hi Type  guifg=#b998df guibg=NONE gui=NONE
 hi Underlined  guifg=NONE guibg=NONE gui=underline
 
+hi SpellBad guifg=NONE guibg=NONE gui=undercurl,italic ctermfg=white ctermbg=blue cterm=NONE guisp=#bee8ff " undercurl color
+hi SpellCap guifg=NONE guibg=NONE gui=undercurl,italic ctermfg=white ctermbg=blue cterm=NONE guisp=#bee8ff " undercurl color
+hi SpellLocal guifg=NONE guibg=NONE gui=undercurl,italic ctermfg=white ctermbg=blue cterm=NONE guisp=#bee8ff " undercurl color
+hi SpellRare guifg=NONE guibg=NONE gui=undercurl,italic ctermfg=white ctermbg=blue cterm=NONE guisp=#bee8ff " undercurl color
+
 hi pythonStatement  guifg=#a3aad8 guibg=NONE gui=bold
 hi pythonStrFormat  guifg=#a3aad8 guibg=NONE gui=italic
 
