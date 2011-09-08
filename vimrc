@@ -1,5 +1,9 @@
 " Igor's VIM configuration file
 "
+
+" Mark as loaded if it's not compatible.
+let g:CSApprox_verbose_level = 0
+
 call pathogen#infect() " Pathogen magic
 
 " Set syntax highlighting
