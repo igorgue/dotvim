@@ -9,8 +9,8 @@ if has("gui_macvim")
     "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
     "set guifont=Anonymous\ Pro:h14
 
-    " Command-F for CommandT
-    map <D-F> :PeepOpen<CR>
+    " Command-F for FufFile
+    map <D-F> :FufFile<CR>
 
     " Command-Return for fullscreen
     macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
