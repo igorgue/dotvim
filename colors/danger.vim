@@ -14,19 +14,19 @@ endif
 
 let g:colors_name = "danger"
 
-hi Cursor  guifg=#000000 guibg=#ffb376 gui=NONE
-hi Visual  guifg=#000000 guibg=#ffb376 gui=NONE
+hi Cursor  guifg=#000000 guibg=#c290f0 gui=NONE
+hi Visual  guifg=#000000 guibg=#c290f0 gui=NONE
 hi CursorLine  guifg=NONE guibg=#282828 gui=NONE
 hi CursorColumn  guifg=NONE guibg=#282828 gui=NONE
 hi LineNr  guifg=#515150 guibg=NONE gui=NONE
 hi VertSplit  guifg=#454543 guibg=#454543 gui=NONE
-hi MatchParen  guifg=#FFFFFF guibg=#ffb376 gui=NONE
-hi StatusLine  guifg=#d8d9d1 guibg=#454543 gui=bold
-hi StatusLineNC  guifg=#d8d9d1 guibg=#454543 gui=NONE
+hi MatchParen  guifg=#FFFFFF guibg=#c290f0 gui=NONE
+hi StatusLine  guifg=#FFFFFF guibg=#fd4b4b gui=bold
+hi StatusLineNC  guifg=#d8d9d1 guibg=#6f706f gui=bold
 hi Pmenu  guifg=NONE guibg=NONE gui=NONE
 hi PmenuSel  guifg=NONE guibg=#555577 gui=NONE
-hi IncSearch  guifg=#ffb376 guibg=NONE gui=underline
-hi Search  guifg=#ffb376 guibg=NONE gui=underline
+hi IncSearch  guifg=#c290f0 guibg=NONE gui=underline
+hi Search  guifg=#c290f0 guibg=NONE gui=underline
 hi Directory  guifg=#dfca53 guibg=NONE gui=NONE
 hi Folded  guifg=#b4df61 guibg=#222222 gui=NONE
 
