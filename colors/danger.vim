@@ -21,7 +21,7 @@ hi CursorColumn  guifg=NONE guibg=#282828 gui=NONE
 hi LineNr  guifg=#515150 guibg=NONE gui=NONE
 hi VertSplit  guifg=#454543 guibg=#454543 gui=NONE
 hi MatchParen  guifg=#FFFFFF guibg=#c290f0 gui=NONE
-hi StatusLine  guifg=#FFFFFF guibg=#fd4b4b gui=bold
+hi StatusLine  guifg=#000000 guibg=#fd9598 gui=bold
 hi StatusLineNC  guifg=#d8d9d1 guibg=#6f706f gui=bold
 hi Pmenu  guifg=NONE guibg=NONE gui=NONE
 hi PmenuSel  guifg=NONE guibg=#555577 gui=NONE
