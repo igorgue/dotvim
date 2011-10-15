@@ -165,6 +165,9 @@ nmap <leader>d :set ft=htmldjango<CR>
 " shortcut to search in project
 nnoremap <leader>a :Ack<space>
 
+" When enter clear the search selection.
+nnoremap <CR> :nohlsearch<cr>
+
 " shortcut to map ; to :
 nnoremap ; :
  
@@ -231,6 +234,8 @@ set backupdir=/tmp
 set hls
 set showtabline=2
 set hidden
+set cursorline      " Cursor line to see where my cursor is, smart.
+set cmdheight=2     " Two lines of command.
 
 " Some JSLINT settings
 let $JS_CMD='node'
