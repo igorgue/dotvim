@@ -3,6 +3,7 @@
 
 " Mark as loaded if it's not compatible.
 let g:CSApprox_verbose_level = 0
+let g:pymode_lint = 0 " Disable annoying pylint mode plugin
 
 call pathogen#infect() " Pathogen magic
 
@@ -160,13 +161,12 @@ command! W :w
 
 " shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+
+" shortcut to change to htmldjnago
 nmap <leader>d :set ft=htmldjango<CR>
 
 " shortcut to search in project
 nnoremap <leader>a :Ack<space>
-
-" When enter clear the search selection.
-nnoremap <CR> :nohlsearch<cr>
 
 " shortcut to map ; to :
 nnoremap ; :
@@ -186,6 +186,7 @@ function TalibanMode()
     imap <right> isuckatvi
 endfunction
 command! TalibanMode call TalibanMode()
+
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -235,7 +236,6 @@ set hls
 set showtabline=2
 set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
-set cmdheight=2     " Two lines of command.
 
 " Some JSLINT settings
 let $JS_CMD='node'
