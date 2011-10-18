@@ -130,3 +130,9 @@
 [submodule "bundle/vim-python-mode"]
 	path = bundle/vim-python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule "konira.vim"]
+	path = konira.vim
+	url = https://github.com/alfredodeza/konira.vim.git
+[submodule "bundle/vim-konira"]
+	path = bundle/vim-konira
+	url = https://github.com/alfredodeza/konira.vim.git
