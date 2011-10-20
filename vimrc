@@ -5,7 +5,8 @@
 let g:CSApprox_verbose_level = 0
 let g:pymode_lint = 0 " Disable annoying pylint mode plugin
 
-call pathogen#infect() " Pathogen magic
+call pathogen#runtime_append_all_bundles() " Pathogen magic
+call pathogen#helptags()
 
 " Set syntax highlighting
 set background=dark
