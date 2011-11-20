@@ -1,12 +1,21 @@
 " Igor's VIM configuration file
-"
 
 " Mark as loaded if it's not compatible.
 let g:CSApprox_verbose_level = 0
-let g:pymode_lint = 0 " Disable annoying pylint mode plugin
 
-call pathogen#runtime_append_all_bundles() " Pathogen magic
+" Pymode options.
+let g:pymode_lint = 0 " Disable annoying pylint mode plugin
+let g:pymode_virtualenv = 0 " Disable broken virtualenv plugin
+let g:pymode_options_fold = 0 " I don't like folding
+
+" Pathogen load
+filetype off
+
+call pathogen#infect()
 call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
 
 " Set syntax highlighting
 set background=dark
