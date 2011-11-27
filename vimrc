@@ -8,6 +8,10 @@ let g:pymode_lint = 0 " Disable annoying pylint mode plugin
 let g:pymode_virtualenv = 0 " Disable broken virtualenv plugin
 let g:pymode_options_fold = 0 " I don't like folding
 
+if !has('python')
+    let g:pymode = 0
+end
+
 " Pathogen load
 filetype off
 
