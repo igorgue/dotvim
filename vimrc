@@ -127,6 +127,7 @@ if has("mac")
   map <D-3> :TagbarToggle<CR>
   map <D-4> :noh<CR>
   map <D-5> :GundoToggle<CR>
+  map <D-6> :JSLintToggle<CR>
   map <D-j> gj
   map <D-k> gk
 else
@@ -134,6 +135,7 @@ else
   map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
   map <F5> :GundoToggle<CR>
+  map <F6> :JSLintToggle<CR>
 endif
 
 map <C-h> <C-w>h
