@@ -62,13 +62,17 @@ if has("autocmd")
 endif
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+" adds less syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+" make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
 
 " Python highlighting errors
 let python_highlight_all=1
