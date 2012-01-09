@@ -182,3 +182,6 @@
 	path = bundle/vim-konira
 	url = https://github.com/alfredodeza/konira.vim.git
     ignore = dirty
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/lunaru/vim-less.git
