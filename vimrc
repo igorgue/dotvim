@@ -2,7 +2,6 @@
 
 " Mark as loaded if it's not compatible.
 let g:CSApprox_verbose_level = 0
-let g:Powerline_symbols = 'fancy'
 
 " Pymode options.
 let g:pymode_lint = 0 " Disable annoying pylint mode plugin
