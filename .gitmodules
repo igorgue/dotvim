@@ -186,3 +186,6 @@
 	path = bundle/vim-less
 	url = https://github.com/lunaru/vim-less.git
     ignore = dirty
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
