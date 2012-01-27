@@ -185,6 +185,4 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/lunaru/vim-less.git
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
+    ignore = dirty
