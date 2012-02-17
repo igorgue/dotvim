@@ -159,8 +159,9 @@ au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType haskell setlocal ai
+au FileType less setlocal ai
+au FileType less setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
 au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -208,7 +209,7 @@ command! TalibanMode call TalibanMode()
 
 
 " Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <C-S-X> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
