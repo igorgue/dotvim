@@ -259,6 +259,7 @@ set hls
 set showtabline=2
 set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
+set t_Co=256
 
 " Some JSLINT settings
 let $JS_CMD='node'
