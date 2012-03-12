@@ -4,7 +4,7 @@
     ignore = dirty
 [submodule "bundle/vim-ack"]
 	path = bundle/vim-ack
-	url = http://github.com/mileszs/ack.vim.git
+	url = http://github.com/mileszs/ack.vim
     ignore = dirty
 [submodule "bundle/vim-snipmate"]
 	path = bundle/vim-snipmate
