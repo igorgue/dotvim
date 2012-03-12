@@ -126,7 +126,7 @@ set ofu=syntaxcomplete#Complete
 
 " syntax for multiple tag files are
 " set tags=/my/dir1/tags, /my/dir2/tags
-set tags=tags;$HOME/.vim/tags/ "recursively searches directory for 'tags' file
+set tags=tags;$HOME/.vim/tags/;$HOME/tmp/tags/ "recursively searches directory for 'tags' file
 
 " Useful keyboard-shortcuts
 if has("mac")
