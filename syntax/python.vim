@@ -228,7 +228,7 @@ syn match   pythonBinError	"\<0[bB][01]*[2-9]\d*[lL]\=\>" display
 
 if exists("python_highlight_builtins") && python_highlight_builtins != 0
   " Builtin functions, types and objects
-  syn keyword pythonBuiltinObj	True False Ellipsis None NotImplemented self
+  syn keyword pythonBuiltinObj	True False Ellipsis None NotImplemented self cls
   syn keyword pythonBuiltinObj	__debug__ __doc__ __file__ __name__ __package__ __module__
 
   syn keyword pythonBuiltinFunc	__import__ abs all any apply
