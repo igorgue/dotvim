@@ -12,7 +12,7 @@ let g:pymode_options_fold = 0 " I don't like folding
 let g:Powerline_symbols = 'fancy'
 
 if !has('python')
-    let g:pymode = 0
+  let g:pymode = 0
 end
 
 " Pathogen load
@@ -261,11 +261,10 @@ set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
 set t_Co=256
 
-" Some JSLINT settings
-let $JS_CMD='node'
-
 " Autoclean fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+let g:JSLintHighlightErrorLine = 0
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
