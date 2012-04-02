@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>@igorgue's Dotvim by igorgue</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>@igorgue's Dotvim</h1>
+        <h2>Vim config files</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/igorgue/dotvim/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/igorgue/dotvim/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/igorgue/dotvim" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p>Here we dragons</p>
+
+<h1>Install</h1>
+
+<h3>Automatic Install</h3>
+
+<p>Run this from your terminal:</p>
+
+<pre><code>curl <a href="https://raw.github.com/igorgue/dotvim/master/install.rb">https://raw.github.com/igorgue/dotvim/master/install.rb</a> | ruby
+</code></pre>
+
+<p>Y U NO TRUST ME?</p>
+
+<h3>Manual Install</h3>
+
+<p>Get it from git:</p>
+
+<pre><code>cd $HOME
+git clone git://github.com/igorgue/dotvim.git .vim
+
+ln -s $HOME/.vim/vimrc $HOME/.vimrc
+ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
+
+cd $HOME/.vim
+git submodule init
+git submodule update
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
