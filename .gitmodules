@@ -193,6 +193,3 @@
 [submodule "bundle/vim-ctrlp"]
 	path = bundle/vim-ctrlp
 	url = https://github.com/kien/ctrlp.vim
-[submodule "bundle/vim-actionscript"]
-	path = bundle/vim-actionscript
-	url = https://github.com/vim-scripts/actionscript.vim.git
