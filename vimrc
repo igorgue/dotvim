@@ -175,6 +175,7 @@ au BufNewFile,BufRead models.py setlocal filetype=python.django
 au BufNewFile,BufRead views.py setlocal filetype=python.django
 au BufNewFile,BufRead settings.py setlocal filetype=python.django
 au BufNewFile,BufRead forms.py setlocal filetype=python.django
+au BufNewFile,BufRead *.as setlocal filetype=actionscript
 
 " Map ,e to open files in the same directory as the current file
 map <leader>e :e <C-R>=expand("%:h")<cr>/
