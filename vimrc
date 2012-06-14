@@ -11,6 +11,9 @@ let g:pymode_options_fold = 0 " I don't like folding
 " Fancy powerline.
 let g:Powerline_symbols = 'fancy'
 
+" JavaScript's linter
+let g:syntastic_javascript_checker = 'jsl'
+
 if !has('python')
   let g:pymode = 0
 end
