@@ -102,10 +102,6 @@
 	path = bundle/vim-scala
 	url = git://github.com/bdd/vim-scala.git
     ignore = dirty
-[submodule "bundle/vim-jslint"]
-	path = bundle/vim-jslint
-	url = git://github.com/hallettj/jslint.vim.git
-    ignore = dirty
 [submodule "bundle/vim-tagbar"]
 	path = bundle/vim-tagbar
 	url = https://github.com/majutsushi/tagbar.git
