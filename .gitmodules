@@ -100,7 +100,7 @@
     ignore = dirty
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
-	url = git://github.com/bdd/vim-scala.git
+	url = git://github.com/derekwyatt/vim-scala.git
     ignore = dirty
 [submodule "bundle/vim-tagbar"]
 	path = bundle/vim-tagbar
