@@ -150,10 +150,6 @@
 	path = bundle/vim-closetag
 	url = git://github.com/docunext/closetag.vim.git
     ignore = dirty
-[submodule "bundle/vim-csapprox"]
-	path = bundle/vim-csapprox
-	url = https://github.com/godlygeek/csapprox.git
-    ignore = dirty
 [submodule "bundle/vim-hexhighlight"]
 	path = bundle/vim-hexhighlight
 	url = https://github.com/vim-scripts/hexHighlight.vim.git
@@ -184,7 +180,7 @@
     ignore = dirty
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
+    url = https://github.com/Lokaltog/powerline.git
     ignore = dirty
 [submodule "bundle/vim-ctrlp"]
 	path = bundle/vim-ctrlp
