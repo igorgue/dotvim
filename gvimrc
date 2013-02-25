@@ -55,6 +55,7 @@ function HackingMode()
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h12
     set guifont=Ubuntu\ Mono:h14
 endfunction
+command! PresentationMode call PresentationMode()
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
