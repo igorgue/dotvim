@@ -274,3 +274,6 @@ let g:JSLintHighlightErrorLine = 0
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" Include powerline
+set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim

@@ -178,10 +178,6 @@
 	path = bundle/vim-less
 	url = https://github.com/lunaru/vim-less.git
     ignore = dirty
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-    url = https://github.com/Lokaltog/powerline.git
-    ignore = dirty
 [submodule "bundle/vim-ctrlp"]
 	path = bundle/vim-ctrlp
 	url = https://github.com/kien/ctrlp.vim
@@ -190,3 +186,9 @@
 	path = bundle/vim-webapi
 	url = https://github.com/mattn/webapi-vim.git
     ignore = dirty
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = git://github.com/Lokaltog/powerline.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
