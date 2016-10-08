@@ -214,6 +214,8 @@ function TalibanMode()
 endfunction
 command! TalibanMode call TalibanMode()
 
+TalibanMode
+
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-X> :call <SID>SynStack()<CR>
@@ -277,3 +279,8 @@ endif
 
 " Include powerline
 set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim
+set encoding=utf-8
+
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup

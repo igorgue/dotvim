@@ -43,7 +43,7 @@ function PresentationMode()
     set nonumber
     set background=light
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h24
-    set guifont=Ubuntu\ Mono\ for\ Powerline:h24
+    "set guifont=Ubuntu\ Mono\ for\ Powerline:h24
 endfunction
 command! PresentationMode call PresentationMode()
 
@@ -53,7 +53,7 @@ function HackingMode()
     set nonumber
     set background=dark
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h12
-    set guifont=Ubuntu\ Mono\ for\ Powerline:h14
+    "set guifont=Ubuntu\ Mono\ for\ Powerline:h14
 endfunction
 command! HackingMode call HackingMode()
 
