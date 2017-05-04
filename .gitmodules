@@ -195,3 +195,6 @@
 [submodule "bundle/vim-hardmode"]
 	path = bundle/vim-hardmode
 	url = git://github.com/wikitopian/hardmode.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = https://github.com/slim-template/vim-slim
