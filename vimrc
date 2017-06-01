@@ -79,6 +79,7 @@ au BufNewFile,BufRead *.json set ft=javascript
 " make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
+au FileType slim set softtabstop=2 tabstop=2 shiftwidth=2
 
 " Python highlighting errors
 let python_highlight_all=1
