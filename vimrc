@@ -14,9 +14,8 @@ let g:Powerline_symbols = 'fancy'
 " JavaScript's linter
 let g:syntastic_javascript_checker = 'jsl'
 
-if !has('python')
-  let g:pymode = 0
-end
+" Disable pymode, it's too slow
+let g:pymode = 0
 
 " Pathogen load
 filetype off
@@ -217,7 +216,6 @@ command! TalibanMode call TalibanMode()
 
 TalibanMode
 
-
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-X> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -282,6 +280,10 @@ endif
 set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim
 set encoding=utf-8
 
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+" Enable code actions via ctrlp
+let g:OmniSharp_selector_ui = 'ctrlp'
+set completeopt-=preview

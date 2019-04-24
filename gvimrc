@@ -6,6 +6,7 @@ if has("gui_macvim")
     set guioptions-=L
     set guioptions-=r
 
+    " Example to setup your own gvim font
     "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
     "set guifont=Anonymous\ Pro:h14
 
@@ -25,6 +26,8 @@ if has("gui_macvim")
     " Don't beep
     set visualbell
 
+    " Set your color scheme
+    colorscheme danger
     "colorscheme white
     "colorscheme candy
     "colorscheme candycode
@@ -32,7 +35,7 @@ if has("gui_macvim")
     "colorscheme solarized
     "colorscheme vividchalk
     "colorscheme molokai
-    colorscheme molokai+
+    "colorscheme molokai+
     "colorscheme darkbone
     "colorscheme grb4
 endif
