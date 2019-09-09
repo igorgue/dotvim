@@ -14,11 +14,10 @@ let g:Powerline_symbols = 'fancy'
 " JavaScript's linter
 let g:syntastic_javascript_checker = 'jsl'
 
-"if !has('python')
-  "let g:pymode = 0
-"end
-" Disable pymode, it's too slow
-let g:pymode = 0
+" Disable python if not found
+if !has('python')
+  let g:pymode = 0
+end
 
 " Pathogen load
 filetype off
@@ -165,6 +164,7 @@ au BufNewFile,BufRead Gemfile setfiletype ruby
 au BufNewFile,BufRead Capfile setfiletype ruby
 
 au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType crystal setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType haskell setlocal ai
@@ -204,20 +204,20 @@ nnoremap ; :
 " use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-"" Taliban mode!!! alalallalallalallala!
-"function TalibanMode()
-    "map <up> iisuckatvi
-    "map <down> iisuckatvi
-    "map <left> iisuckatvi
-    "map <right> iisuckatvi
-    "imap <up> isuckatvi
-    "imap <down> isuckatvi
-    "imap <left> isuckatvi
-    "imap <right> isuckatvi
-"endfunction
-"command! TalibanMode call TalibanMode()
+" Taliban mode!!! alalallalallalallala!
+function TalibanMode()
+    map <up> iisuckatvi
+    map <down> iisuckatvi
+    map <left> iisuckatvi
+    map <right> iisuckatvi
+    imap <up> isuckatvi
+    imap <down> isuckatvi
+    imap <left> isuckatvi
+    imap <right> isuckatvi
+endfunction
+command! TalibanMode call TalibanMode()
 
-"TalibanMode
+TalibanMode
 
 " Copy shit
 function Tcmd()
@@ -244,7 +244,6 @@ endfunc
 
 if has("cscope")
   " uncoment this and set if vim can't find it
-  "set csprg=/usr/local/bin/cscope
   set csto=0
   set cst
   set nocsverb
@@ -297,10 +296,8 @@ endif
 set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim
 set encoding=utf-8
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-
-" Enable code actions via ctrlp
-let g:OmniSharp_selector_ui = 'ctrlp'
-set completeopt-=preview
+if has('python')
+  python from powerline.vim import setup as powerline_setup
+  python powerline_setup()
+  python del powerline_setup
+endif
