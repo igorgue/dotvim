@@ -14,9 +14,10 @@ let g:Powerline_symbols = 'fancy'
 " JavaScript's linter
 let g:syntastic_javascript_checker = 'jsl'
 
-if !has('python')
-  let g:pymode = 0
-end
+"if !has('python')
+  "let g:pymode = 0
+"end
+let g:pymode = 0
 
 " Pathogen load
 filetype off
@@ -202,21 +203,34 @@ nnoremap ; :
 " use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-" Taliban mode!!! alalallalallalallala!
-function TalibanMode()
-    map <up> iisuckatvi
-    map <down> iisuckatvi
-    map <left> iisuckatvi
-    map <right> iisuckatvi
-    imap <up> isuckatvi
-    imap <down> isuckatvi
-    imap <left> isuckatvi
-    imap <right> isuckatvi
+"" Taliban mode!!! alalallalallalallala!
+"function TalibanMode()
+    "map <up> iisuckatvi
+    "map <down> iisuckatvi
+    "map <left> iisuckatvi
+    "map <right> iisuckatvi
+    "imap <up> isuckatvi
+    "imap <down> isuckatvi
+    "imap <left> isuckatvi
+    "imap <right> isuckatvi
+"endfunction
+"command! TalibanMode call TalibanMode()
+
+"TalibanMode
+
+" Copy shit
+function Tcmd()
+  !echo be rake test TEST=% | tr -d '\n' | pbcopy
 endfunction
-command! TalibanMode call TalibanMode()
+command! Tcmd call Tcmd()
 
-TalibanMode
-
+" Set tabs to the thing I say!!!
+function SetTabs(amount)
+  set tabstop=a:amount       " number of spaces for tab character
+  set shiftwidth=a:amount    " number of spaces to (auto) indent
+  set softtabstop=a:amount   " another tab change that I don't remember
+endfunction
+command! -nargs=1 SetTabs call s:SetTabs(<f-args>)
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-X> :call <SID>SynStack()<CR>
