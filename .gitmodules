@@ -92,7 +92,7 @@
     ignore = dirty
 [submodule "bundle/vim-rspec"]
 	path = bundle/vim-rspec
-	url = git://github.com/taq/vim-rspec.git
+	url = https://github.com/thoughtbot/vim-rspec.git
     ignore = dirty
 [submodule "bundle/vim-syntastic"]
 	path = bundle/vim-syntastic
@@ -198,3 +198,21 @@
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim
+[submodule "bundle/vim-crystal"]
+	path = bundle/vim-crystal
+	url = https://github.com/rhysd/vim-crystal.git
+[submodule "bundle/vim-devicons"]
+	path = bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "bundle/vim-elixir"]
+	path = bundle/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "bundle/vim-omnisharp"]
+	path = bundle/vim-omnisharp
+	url = https://github.com/OmniSharp/omnisharp-vim.git

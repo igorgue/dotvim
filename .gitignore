@@ -3,3 +3,5 @@
 .netrwhist
 *.un~
 .swo
+
+bundle/vim-elixir/doc/tags
