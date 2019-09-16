@@ -297,7 +297,7 @@ set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim
 set encoding=utf-8
 
 if has('python')
-  python from powerline.vim import setup as powerline_setup
-  python powerline_setup()
-  python del powerline_setup
+  "python from powerline.vim import setup as powerline_setup
+  "python powerline_setup()
+  "python del powerline_setup
 endif

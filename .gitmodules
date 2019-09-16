@@ -90,10 +90,6 @@
 	path = bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
     ignore = dirty
-[submodule "bundle/vim-rspec"]
-	path = bundle/vim-rspec
-	url = https://github.com/thoughtbot/vim-rspec.git
-    ignore = dirty
 [submodule "bundle/vim-syntastic"]
 	path = bundle/vim-syntastic
 	url = git://github.com/scrooloose/syntastic.git
