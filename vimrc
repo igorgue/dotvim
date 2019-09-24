@@ -302,3 +302,6 @@ if has('python')
   "python powerline_setup()
   "python del powerline_setup
 endif
+
+let g:racer_experimental_completer = 1
+let g:racer_insert_paren = 1
