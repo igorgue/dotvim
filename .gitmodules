@@ -197,9 +197,6 @@
 [submodule "bundle/vim-crystal"]
 	path = bundle/vim-crystal
 	url = https://github.com/rhysd/vim-crystal.git
-[submodule "bundle/vim-devicons"]
-	path = bundle/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
