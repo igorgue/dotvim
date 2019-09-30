@@ -224,3 +224,6 @@
 [submodule "bundle/vim-rust-doc"]
 	path = bundle/vim-rust-doc
 	url = git@github.com:rhysd/rust-doc.vim.git
+[submodule "bundle/vim-toml"]
+	path = bundle/vim-toml
+	url = git@github.com:cespare/vim-toml.git
