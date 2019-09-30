@@ -215,3 +215,6 @@
 [submodule "bundle/vim-rust-official"]
 	path = bundle/vim-rust-official
 	url = git@github.com:rust-lang/rust.vim.git
+[submodule "bundle/vim-rust"]
+	path = bundle/vim-rust
+	url = git@github.com:rust-lang/rust.vim.git
