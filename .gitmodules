@@ -212,3 +212,6 @@
 [submodule "bundle/vim-omnisharp"]
 	path = bundle/vim-omnisharp
 	url = https://github.com/OmniSharp/omnisharp-vim.git
+[submodule "bundle/vim-rust-official"]
+	path = bundle/vim-rust-official
+	url = git@github.com:rust-lang/rust.vim.git

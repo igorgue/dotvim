@@ -68,6 +68,12 @@ hi SpellRare guifg=NONE guibg=NONE gui=undercurl ctermfg=white ctermbg=blue cter
 hi pythonStatement  guifg=#7970ff guibg=NONE gui=bold
 hi pythonStrFormat  guifg=#7970ff guibg=NONE gui=bold
 
+"hi rustConditional  guifg=#7970ff guibg=NONE gui=bold
+hi rustKeyword  guifg=#a3aad8 guibg=NONE gui=bold
+hi rustTrait  guifg=#a3aad8 guibg=NONE gui=bold
+hi rustStructure  guifg=#a3aad8 guibg=NONE gui=bold
+hi rustMacro  guifg=#a3aad8 guibg=NONE gui=bold
+
 hi rubyClass  guifg=#7970ff guibg=NONE gui=bold
 hi rubyFunction  guifg=#dfcc94 guibg=NONE gui=bold
 hi rubyInterpolationDelimiter  guifg=#a1c6d7 guibg=NONE gui=bold
