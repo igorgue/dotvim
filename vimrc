@@ -168,6 +168,7 @@ au FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType crystal setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType vuejs setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType haskell setlocal ai
 au FileType less setlocal ai
 au FileType less setlocal tabstop=2 shiftwidth=2 softtabstop=2
