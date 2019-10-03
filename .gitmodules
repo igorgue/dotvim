@@ -227,3 +227,6 @@
 [submodule "bundle/vim-toml"]
 	path = bundle/vim-toml
 	url = git@github.com:cespare/vim-toml.git
+[submodule "bundle/vim-you-complete-me"]
+	path = bundle/vim-you-complete-me
+	url = git@github.com:ycm-core/YouCompleteMe.git
