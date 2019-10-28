@@ -128,7 +128,7 @@ set viminfo='20,<50,s10,h
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " omni completion
-set ofu=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 
 " syntax for multiple tag files are
 " set tags=/my/dir1/tags, /my/dir2/tags
@@ -139,7 +139,6 @@ if has("mac")
   map <D-2> :NERDTreeToggle<CR>
   map <D-3> :TagbarToggle<CR>
   map <D-4> :noh<CR>
-  map <D-5> :GundoToggle<CR>
   map <D-6> :JSLintToggle<CR>
   map <D-j> gj
   map <D-k> gk
@@ -147,7 +146,6 @@ else
   map <F2> :NERDTreeToggle<CR>
   map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
-  map <F5> :GundoToggle<CR>
   map <F6> :JSLintToggle<CR>
 endif
 
@@ -299,12 +297,7 @@ endif
 set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim
 set encoding=utf-8
 
-if has('python')
-  "python from powerline.vim import setup as powerline_setup
-  "python powerline_setup()
-  "python del powerline_setup
-endif
-
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
 let g:rustfmt_autosave = 1
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
