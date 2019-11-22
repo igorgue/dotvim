@@ -42,7 +42,7 @@ endif
 
 " Functions that make easier to switch colors
 function PresentationMode()
-    colorscheme topfunky-light
+    colorscheme default
     set nonumber
     set background=light
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h24
@@ -52,11 +52,8 @@ command! PresentationMode call PresentationMode()
 
 function HackingMode()
     colorscheme danger
-    "colorscheme Tomorrow-Night
     set nonumber
     set background=dark
-    "set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h12
-    "set guifont=Ubuntu\ Mono\ for\ Powerline:h14
 endfunction
 command! HackingMode call HackingMode()
 
