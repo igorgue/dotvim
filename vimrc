@@ -294,3 +294,16 @@ let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
 let g:rustfmt_autosave = 1
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+
+" Nim's JumpToDef
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
