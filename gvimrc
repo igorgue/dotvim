@@ -42,7 +42,7 @@ endif
 
 " Functions that make easier to switch colors
 function PresentationMode()
-    colorscheme default
+    colorscheme Tomorrow
     set nonumber
     set background=light
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h24

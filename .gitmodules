@@ -230,3 +230,6 @@
 [submodule "bundle/vim-you-complete-me"]
 	path = bundle/vim-you-complete-me
 	url = git@github.com:ycm-core/YouCompleteMe.git
+[submodule "bundle/vim-nim"]
+	path = bundle/vim-nim
+	url = git@github.com:zah/nim.vim.git

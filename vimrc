@@ -26,7 +26,6 @@ call pathogen#infect()
 call pathogen#helptags()
 
 filetype plugin indent on
-syntax on
 
 " Set syntax highlighting
 set background=dark
@@ -41,9 +40,9 @@ set ruler           " show the cursor position all the time
 set encoding=utf-8
 
 " Whitespace stuff
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 "set list            " show list chars
 
@@ -91,21 +90,17 @@ let python_highlight_space_errors=1
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" load the plugin and indent settings for the detected filetype
-filetype plugin indent on
-
 " Use modeline overrides
 set modeline
-set modelines=3
+"set modelines=2
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
+let macvim_hig_shift_movement=1
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
-" FIXME Needed to set SHELL to bash to work with ZSH
-set shell=bash
+set shell=zsh
 
 " Better mapleader
 let mapleader=","
@@ -139,14 +134,12 @@ if has("mac")
   map <D-2> :NERDTreeToggle<CR>
   map <D-3> :TagbarToggle<CR>
   map <D-4> :noh<CR>
-  map <D-6> :JSLintToggle<CR>
   map <D-j> gj
   map <D-k> gk
 else
   map <F2> :NERDTreeToggle<CR>
   map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
-  map <F6> :JSLintToggle<CR>
 endif
 
 map <C-h> <C-w>h
@@ -272,16 +265,16 @@ set linebreak       " linebreaks
 set wrap            " set wrap for lines
 set title           " show title in the console title bar
 set sm              " show matching braces
-set ttyfast         " smoother changes
-set shortmess=atI   " abbreviate messages
+"set ttyfast         " smoother changes
+"set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
-set undolevels=200
+"set undolevels=200
 set backupdir=/tmp
-set hls
+"set hls
 set showtabline=2
-set hidden
+"set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
-set t_Co=256
+"set t_Co=256
 
 " Autoclean fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
