@@ -51,6 +51,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set wildignorecase
 
 " Completion
 set wildmenu
@@ -221,11 +222,11 @@ command! Tcmd call Tcmd()
 
 " Set tabs to the thing I say!!!
 function SetTabs(amount)
-  set tabstop=a:amount       " number of spaces for tab character
-  set shiftwidth=a:amount    " number of spaces to (auto) indent
-  set softtabstop=a:amount   " another tab change that I don't remember
+  set tabstop=amount       " number of spaces for tab character
+  set shiftwidth=amount    " number of spaces to (auto) indent
+  set softtabstop=amount   " another tab change that I don't remember
 endfunction
-command! -nargs=1 SetTabs call s:SetTabs(<f-args>)
+command! -nargs=1 SetTabs call SetTabs(<f-args>)
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-X> :call <SID>SynStack()<CR>
@@ -308,4 +309,5 @@ endf
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
-set lazyredraw
+set nolazyredraw
+let python_highlight_all = 1
