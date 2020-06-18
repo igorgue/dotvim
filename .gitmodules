@@ -233,3 +233,6 @@
 [submodule "bundle/vim-nim"]
 	path = bundle/vim-nim
 	url = git@github.com:zah/nim.vim.git
+[submodule "bundle/vim-color-coded"]
+	path = bundle/vim-color-coded
+	url = git@github.com:jeaye/color_coded.git

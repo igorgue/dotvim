@@ -12,7 +12,7 @@ let g:pymode_options_fold = 0 " I don't like folding
 let g:Powerline_symbols = 'fancy'
 
 " JavaScript's linter
-let g:syntastic_javascript_checker = 'jsl'
+let g:syntastic_js_checker = 'jsl'
 
 " Disable python if not found
 if !has('python')
@@ -82,6 +82,7 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
 au FileType slim set softtabstop=2 tabstop=2 shiftwidth=2
 au FileType sql set softtabstop=2 tabstop=2 shiftwidth=2
+au FileType cs set softtabstop=4 tabstop=4 shiftwidth=4
 
 " Python highlighting errors
 let python_highlight_all=1
@@ -199,6 +200,19 @@ nnoremap ; :
 " use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+let g:menu_hidden = 0
+function! ToggleMenu()
+    if g:menu_hidden
+        set guioptions+=m
+        let g:menu_hidden = 0
+    else
+        set guioptions-=m
+        let g:menu_hidden = 1
+    endif
+endfunction
+command! ToggleMenu call ToggleMenu()
+nmap <F10> :ToggleMenu<CR>
+
 " Taliban mode!!! alalallalallalallala!
 function TalibanMode()
     map <up> iisuckatvi
@@ -311,3 +325,11 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 
 set nolazyredraw
 let python_highlight_all = 1
+
+let g:OmniSharp_highlighting = 3
+let g:OmniSharp_server_use_mono = 1
+let g:OmniSharp_server_stdio = 0
+let g:OmniSharp_server_type = 'roslyn'
+"let g:OmniSharp_prefer_global_sln = 1
+let g:OmniSharp_timeout = 20
+let g:syntastic_cs_checkers = ['code_checker']
