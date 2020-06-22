@@ -13,3 +13,5 @@ pack/
 third_party/go
 *.un~
 view/
+go.mod
+go.sum
