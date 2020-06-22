@@ -208,7 +208,7 @@
 	url = https://github.com/fatih/vim-go.git
 [submodule "bundle/vim-omnisharp"]
 	path = bundle/vim-omnisharp
-	url = https://github.com/OmniSharp/omnisharp-vim.git
+	url = https://github.com/OmniSharp/omnisharp-vim
 [submodule "bundle/vim-rust-official"]
 	path = bundle/vim-rust-official
 	url = git@github.com:rust-lang/rust.vim.git
@@ -236,3 +236,9 @@
 [submodule "bundle/vim-color-coded"]
 	path = bundle/vim-color-coded
 	url = git@github.com:jeaye/color_coded.git
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
+[submodule "bundle/vim-python-syntax"]
+	path = bundle/vim-python-syntax
+	url = git@github.com:vim-python/python-syntax.git

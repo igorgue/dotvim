@@ -12,7 +12,7 @@ let g:pymode_options_fold = 0 " I don't like folding
 let g:Powerline_symbols = 'fancy'
 
 " JavaScript's linter
-let g:syntastic_js_checker = 'jsl'
+let g:syntastic_js_checker = 'eslint'
 
 " Disable python if not found
 if !has('python')
@@ -86,8 +86,8 @@ au FileType cs set softtabstop=4 tabstop=4 shiftwidth=4
 
 " Python highlighting errors
 let python_highlight_all=1
-let python_highlight_indent_errors=1
-let python_highlight_space_errors=1
+"let python_highlight_indent_errors=1
+"let python_highlight_space_errors=1
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -326,10 +326,11 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 set nolazyredraw
 let python_highlight_all = 1
 
+"let g:OmniSharp_server_path = "/home/igor/.omnisharp/omnisharp-roslyn/OmniSharp.exe"
 let g:OmniSharp_highlighting = 3
 let g:OmniSharp_server_use_mono = 1
 let g:OmniSharp_server_stdio = 0
 let g:OmniSharp_server_type = 'roslyn'
 "let g:OmniSharp_prefer_global_sln = 1
-let g:OmniSharp_timeout = 20
+"let g:OmniSharp_timeout = 20
 let g:syntastic_cs_checkers = ['code_checker']
