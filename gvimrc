@@ -41,7 +41,7 @@ if has("gui_macvim")
 endif
 
 " Functions that make easier to switch colors
-function PresentationMode()
+function! PresentationMode()
     colorscheme Tomorrow
     set nonumber
     set background=light
@@ -50,7 +50,7 @@ function PresentationMode()
 endfunction
 command! PresentationMode call PresentationMode()
 
-function HackingMode()
+function! HackingMode()
     colorscheme danger
     set nonumber
     set background=dark

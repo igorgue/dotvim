@@ -214,7 +214,7 @@ command! ToggleMenu call ToggleMenu()
 nmap <F10> :ToggleMenu<CR>
 
 " Taliban mode!!! alalallalallalallala!
-function TalibanMode()
+function! TalibanMode()
     map <up> iisuckatvi
     map <down> iisuckatvi
     map <left> iisuckatvi
@@ -229,13 +229,13 @@ command! TalibanMode call TalibanMode()
 TalibanMode
 
 " Copy shit
-function Tcmd()
+function! Tcmd()
   !echo be rake test TEST=% | tr -d '\n' | pbcopy
 endfunction
 command! Tcmd call Tcmd()
 
 " Set tabs to the thing I say!!!
-function SetTabs(amount)
+function! SetTabs(amount)
   set tabstop=amount       " number of spaces for tab character
   set shiftwidth=amount    " number of spaces to (auto) indent
   set softtabstop=amount   " another tab change that I don't remember
@@ -335,5 +335,4 @@ let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_server_type = 'roslyn'
 "let g:OmniSharp_prefer_global_sln = 1
 let g:OmniSharp_timeout = 60
-let g:OmniSharp_want_snippet=1
 let g:syntastic_cs_checkers = ['code_checker']
