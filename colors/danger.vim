@@ -24,7 +24,7 @@ hi MatchParen  guifg=#FFFFFF guibg=#c290f0 gui=NONE
 hi StatusLine  guifg=#000000 guibg=#fd9598 gui=bold
 hi StatusLineNC  guifg=#d8d9d1 guibg=#6f706f gui=bold
 hi Pmenu  guifg=NONE guibg=#555577 gui=NONE
-hi PmenuSel  guifg=NONE guibg=#555577 gui=NONE
+hi PmenuSel  guifg=NONE guibg=#665578 gui=NONE
 hi IncSearch  guifg=#c290f0 guibg=NONE gui=underline
 hi Search  guifg=#c290f0 guibg=NONE gui=underline
 hi Directory  guifg=#dfca53 guibg=NONE gui=NONE
