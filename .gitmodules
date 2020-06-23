@@ -242,3 +242,6 @@
 [submodule "bundle/vim-python-syntax"]
 	path = bundle/vim-python-syntax
 	url = git@github.com:vim-python/python-syntax.git
+[submodule "bundle/vim-sharpenup"]
+	path = bundle/vim-sharpenup
+	url = git@github.com:nickspoons/vim-sharpenup.git

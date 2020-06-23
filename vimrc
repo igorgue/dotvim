@@ -327,12 +327,13 @@ set nolazyredraw
 let python_highlight_all = 1
 
 let g:omnicomplete_fetch_full_documentation = 1
-let g:OmniSharp_server_path = "/home/igor/.omnisharp/omnisharp-roslyn/OmniSharp.exe"
+"let g:OmniSharp_server_path = "/home/igor/.omnisharp/omnisharp-roslyn/OmniSharp.exe"
 let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
-let g:OmniSharp_highlighting = 3
-let g:OmniSharp_server_use_mono = 1
+let g:OmniSharp_highlighting = 2
+"let g:OmniSharp_server_use_mono = 1
 let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_server_type = 'roslyn'
 "let g:OmniSharp_prefer_global_sln = 1
 let g:OmniSharp_timeout = 60
+let g:OmniSharp_want_snippet=1
 let g:syntastic_cs_checkers = ['code_checker']
