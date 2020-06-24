@@ -3,19 +3,26 @@
 " Mark as loaded if it's not compatible.
 let g:CSApprox_verbose_level = 0
 
-" Pymode options.
-let g:pymode_lint = 0 " Disable annoying pylint mode plugin
-let g:pymode_virtualenv = 0 " Disable broken virtualenv plugin
-let g:pymode_options_fold = 0 " I don't like folding
-
 " Fancy powerline.
 let g:Powerline_symbols = 'fancy'
 
 " JavaScript's linter
 let g:syntastic_js_checker = 'eslint'
 
-" Disable python if not found
-if !has('python')
+" Pymode options or disable if not python3
+if has('python3')
+  " let g:pymode_lint = 0 " Disable pylint plugin
+  " let g:pymode_virtualenv = 0 " Disable virtualenv plugin
+  let g:pymode_options_fold = 0 " Disable folding cause I suck at vim
+  let g:pymode_lint_cwindow = 0
+  let g:pymode_lint_on_fly = 1
+  let g:pymode_trim_whitespaces = 1
+  let g:pymode_syntax_slow_sync = 1
+  let g:pymode_syntax_all = 1
+  let g:pymode_indent = 1
+  let g:pymode_motion = 1
+  let g:pymode_options_colorcolumn = 0
+else
   let g:pymode = 0
 end
 
@@ -56,7 +63,7 @@ set wildignorecase
 " Completion
 set wildmenu
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.pyc,*.DS_Store,*.db,env
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.pyc,*.dll,*.pdb,*.DS_Store,*.db,env,
 
 " NerdThree config
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
@@ -74,18 +81,16 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=r
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-" adds less syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-
 " make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
+
 au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
 au FileType slim set softtabstop=2 tabstop=2 shiftwidth=2
 au FileType sql set softtabstop=2 tabstop=2 shiftwidth=2
 au FileType cs set softtabstop=4 tabstop=4 shiftwidth=4
 
 " Python highlighting errors
-let python_highlight_all=1
+" let python_highlight_all=1
 "let python_highlight_indent_errors=1
 "let python_highlight_space_errors=1
 
@@ -97,7 +102,7 @@ set modeline
 "set modelines=2
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement=1
+let macvim_hig_shift_movement = 1
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
@@ -105,7 +110,7 @@ runtime! macros/matchit.vim
 set shell=zsh
 
 " Better mapleader
-let mapleader=","
+let mapleader = ","
 
 " Tab settings
 set tabstop=4       " number of spaces for tab character
@@ -144,6 +149,7 @@ else
   map <F4> :noh<CR>
 endif
 
+" Window movement without the extra ctrl+w press only ctrl+(h,j,k,l)
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -192,7 +198,7 @@ nmap <leader>l :set list!<CR>
 nmap <leader>d :set ft=htmldjango<CR>
 
 " shortcut to search in project
-nnoremap <leader>a :Ack<space>
+nnoremap <leader>a :Ack<space>"
 
 " shortcut to map ; to :
 nnoremap ; :
@@ -227,12 +233,6 @@ endfunction
 command! TalibanMode call TalibanMode()
 
 TalibanMode
-
-" Copy shit
-function! Tcmd()
-  !echo be rake test TEST=% | tr -d '\n' | pbcopy
-endfunction
-command! Tcmd call Tcmd()
 
 " Set tabs to the thing I say!!!
 function! SetTabs(amount)
@@ -289,17 +289,12 @@ set hls
 set showtabline=2
 set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
-set t_Co=256
+" set t_Co=256
 
 " Autoclean fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 let g:JSLintHighlightErrorLine = 0
-
-" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
 
 " Include powerline
 set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim
@@ -326,13 +321,17 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 set nolazyredraw
 let python_highlight_all = 1
 
-let g:omnicomplete_fetch_full_documentation = 1
-"let g:OmniSharp_server_path = "/home/igor/.omnisharp/omnisharp-roslyn/OmniSharp.exe"
+" let g:omnicomplete_fetch_full_documentation = 1
+" let g:OmniSharp_server_path = "/home/igor/.omnisharp/omnisharp-roslyn/OmniSharp.exe"
 let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
-let g:OmniSharp_highlighting = 2
-"let g:OmniSharp_server_use_mono = 1
+" let g:OmniSharp_server_use_mono = 1
 let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_server_type = 'roslyn'
-"let g:OmniSharp_prefer_global_sln = 1
+" let g:OmniSharp_prefer_global_sln = 1
 let g:OmniSharp_timeout = 60
 let g:syntastic_cs_checkers = ['code_checker']
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
