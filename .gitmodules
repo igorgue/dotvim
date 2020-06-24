@@ -238,3 +238,6 @@
 [submodule "bundle/vim-python-syntax"]
 	path = bundle/vim-python-syntax
 	url = git@github.com:vim-python/python-syntax.git
+[submodule "bundle/vim-python-mode"]
+	path = bundle/vim-python-mode
+	url = git@github.com:python-mode/python-mode.git
