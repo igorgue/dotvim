@@ -280,16 +280,16 @@ set linebreak       " linebreaks
 set wrap            " set wrap for lines
 set title           " show title in the console title bar
 set sm              " show matching braces
-"set ttyfast         " smoother changes
-"set shortmess=atI   " abbreviate messages
+set ttyfast         " smoother changes
+set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 "set undolevels=200
 set backupdir=/tmp
-"set hls
+set hls
 set showtabline=2
-"set hidden
+set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
-"set t_Co=256
+set t_Co=256
 
 " Autoclean fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete

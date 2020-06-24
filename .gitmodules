@@ -158,10 +158,6 @@
 	path = bundle/vim-l9
 	url = https://github.com/clones/vim-l9.git
     ignore = dirty
-[submodule "bundle/vim-python-mode"]
-	path = bundle/vim-python-mode
-	url = https://github.com/klen/python-mode.git
-    ignore = dirty
 [submodule "konira.vim"]
 	path = konira.vim
 	url = https://github.com/alfredodeza/konira.vim.git
