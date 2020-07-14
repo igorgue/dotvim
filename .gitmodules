@@ -241,3 +241,6 @@
 [submodule "bundle/vim-python-mode"]
 	path = bundle/vim-python-mode
 	url = git@github.com:python-mode/python-mode.git
+[submodule "bundle/vim-tomorrow-theme"]
+	path = bundle/vim-tomorrow-theme
+	url = git@github.com:chriskempson/vim-tomorrow-theme.git
