@@ -27,9 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'puremourning/vimspector'
-
-    " Local plugs for development
-    Plug '~/Code/danger' " Also just 'igorgue/danger'
+    Plug 'igorgue/danger'
 
     " Nvim only pluggins
     if has('nvim')
