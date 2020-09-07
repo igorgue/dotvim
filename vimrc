@@ -1,44 +1,52 @@
-" Igor's VIM configuration file
+call plug#begin('~/.config/nvim/plugged')
+    " Keep Plug commands between plug#begin/end.
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'itchyny/lightline.vim'
+    Plug 'chriskempson/vim-tomorrow-theme'
+    Plug 'preservim/nerdtree'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-speeddating'
+    Plug 'tpope/vim-git'
+    Plug 'michaeljsmith/vim-indent-object'
+    Plug 'mattn/gist-vim'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'scrooloose/syntastic'
+    Plug 'majutsushi/tagbar'
+    Plug 'preservim/nerdcommenter'
+    Plug 'tsaleh/vim-align'
+    Plug 'docunext/closetag.vim'
+    Plug 'vim-scripts/hexHighlight.vim'
+    Plug 'vim-python/python-syntax'
+    Plug 'chrisbra/Colorizer'
+    Plug 'vim-crystal/vim-crystal'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'OmniSharp/omnisharp-vim'
+    Plug 'sainnhe/edge'
+    Plug 'honza/vim-snippets'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'puremourning/vimspector'
+    Plug 'igorgue/danger'
 
-" Mark as loaded if it's not compatible.
-let g:CSApprox_verbose_level = 0
+    " Nvim only pluggins
+    if has('nvim')
+        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+    endif
+call plug#end()
 
-" Fancy powerline.
-let g:Powerline_symbols = 'fancy'
+" Coc default extensions
+let g:coc_global_extensions = [
+    \ 'coc-clangd', 'coc-css', 'coc-git', 'coc-highlight', 
+    \ 'coc-html', 'coc-json', 'coc-omnisharp', 'coc-pairs',
+    \ 'coc-python', 'coc-sh', 'coc-snippets', 'coc-sql',
+    \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
+    \ 'coc-yaml', 'coc-tag', 'coc-dictionary'
+\]
 
-" JavaScript's linter
-let g:syntastic_js_checker = 'eslint'
+colorscheme danger
 
-" Pymode options or disable if not python3
-if has('python3')
-  " let g:pymode_lint = 0 " Disable pylint plugin
-  " let g:pymode_virtualenv = 0 " Disable virtualenv plugin
-  let g:pymode_options_fold = 0 " Disable folding cause I suck at vim
-  let g:pymode_lint_cwindow = 0
-  let g:pymode_lint_on_fly = 1
-  let g:pymode_trim_whitespaces = 1
-  let g:pymode_syntax_slow_sync = 1
-  let g:pymode_syntax_all = 1
-  let g:pymode_indent = 1
-  let g:pymode_motion = 1
-  let g:pymode_options_colorcolumn = 0
-else
-  let g:pymode = 0
-end
-
-" Pathogen load
-filetype off
-
-call pathogen#infect()
-call pathogen#helptags()
-
-filetype plugin indent on
-
-" Set syntax highlighting
-set background=dark
-syntax on
-
-set nocompatible    " use vim defaults
+set nocompatible    " use nvim defaults
 set number          " show line numbers
 set numberwidth=4   " line numbering takes up to 4 spaces
 set ruler           " show the cursor position all the time
@@ -63,63 +71,79 @@ set wildignorecase
 " Completion
 set wildmenu
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.pyc,*.dll,*.pdb,*.DS_Store,*.db,env,
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.pyc,*.dll,*.pdb,*.DS_Store,*.db,env,*/debug/*,*/Debug/*,*/publish/*
 
-" NerdThree config
-let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
+let NERDTreeSortOrder=['^__\.py$', '\.pyc$', '__pycache__$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 
-" Remember last location in file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+    " Remember last location in file
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+      \| exe "normal g'\"" | endif
+
+    au BufRead,BufNewFile {*.local} set ft=vim
+
+    " Make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
+    au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
+
+    au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
+    au FileType slim set softtabstop=2 tabstop=2 shiftwidth=2
+    au FileType sql set softtabstop=2 tabstop=2 shiftwidth=2
+    au FileType cs set softtabstop=4 tabstop=4 shiftwidth=4
+
+    " Code indentation and file detection
+    " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+    au BufRead,BufNewFile {Procfile.*,Gemfile,Rakefile,Capfile,Vagrantfile,Thorfile,*.ru,*.feature} set ft=ruby
+    au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+    " Code indentation
+    au FileType nim setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType crystal setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType json setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType vuejs setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType haskell setlocal ai
+    au FileType less setlocal ai
+    au FileType less setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 endif
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+" Extra nerd commenter configs
+let g:NERDCustomDelimiters = { 
+    \ 'nim': { 'left': '# ', 'right': '' },
+    \ 'python': { 'left': '# ', 'right': '' },
+    \ 'ruby': { 'left': '# ', 'right': '' },
+    \ 'json': { 'left': '// ', 'right': '' }
+\ }
 
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
+" Add support for jsonc
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
-
-au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
-au FileType slim set softtabstop=2 tabstop=2 shiftwidth=2
-au FileType sql set softtabstop=2 tabstop=2 shiftwidth=2
-au FileType cs set softtabstop=4 tabstop=4 shiftwidth=4
-
-" Python highlighting errors
-" let python_highlight_all=1
-"let python_highlight_indent_errors=1
-"let python_highlight_space_errors=1
-
-" allow backspacing over everything in insert mode
+" Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 " Use modeline overrides
 set modeline
-"set modelines=2
-
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
-" % to bounce from do to end etc.
-runtime! macros/matchit.vim
 
 set shell=zsh
 
 " Better mapleader
 let mapleader = ","
 
-" Tab settings
+" Default tab settings
 set tabstop=4       " number of spaces for tab character
 set shiftwidth=4    " number of spaces to (auto) indent
 set softtabstop=4   " another tab change that I don't remember
 set expandtab       " tabs are converted to spaces
 
 " Don't use Ex mode, use Q for formatting
-map Q gq
+"map Q gq
 
 " Undofile vim 7.3 only
 if has("undofile")
@@ -127,14 +151,14 @@ if has("undofile")
 endif
 
 set viminfo='20,<50,s10,h
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" omni completion
-set omnifunc=syntaxcomplete#Complete
+" Omni completion
+"set omnifunc=syntaxcomplete#Complete
+"let g:omnicomplete_fetch_full_documentation = 1
 
-" syntax for multiple tag files are
-" set tags=/my/dir1/tags, /my/dir2/tags
-set tags=tags;$HOME/.vim/tags/;$HOME/tmp/tags/ "recursively searches directory for 'tags' file
+" Syntax for multiple tag files are
+" Set tags=/my/dir1/tags, /my/dir2/tags
+set tags=tags;$HOME/.config/nvim/tags/;$HOME/tmp/tags/ "recursively searches directory for 'tags' file
 
 " Useful keyboard-shortcuts
 if has("mac")
@@ -147,43 +171,20 @@ else
   map <F2> :NERDTreeToggle<CR>
   map <F3> :TagbarToggle<CR>
   map <F4> :noh<CR>
+  map <F5> :noh<CR>
 endif
 
 " Window movement without the extra ctrl+w press only ctrl+(h,j,k,l)
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
-" code indentation and file detection
-au BufNewFile,BufRead .vimrc setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.feature setfiletype ruby
-au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.ru setfiletype ruby
-au BufNewFile,BufRead Gemfile setfiletype ruby
-au BufNewFile,BufRead Capfile setfiletype ruby
-
-au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType crystal setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType vuejs setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType haskell setlocal ai
-au FileType less setlocal ai
-au FileType less setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au FileType htmldjango setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-au BufNewFile,BufRead admin.py setlocal filetype=python.django
-au BufNewFile,BufRead urls.py setlocal filetype=python.django
-au BufNewFile,BufRead models.py setlocal filetype=python.django
-au BufNewFile,BufRead views.py setlocal filetype=python.django
-au BufNewFile,BufRead settings.py setlocal filetype=python.django
-au BufNewFile,BufRead forms.py setlocal filetype=python.django
-au BufNewFile,BufRead *.as setlocal filetype=actionscript
+" Fzf mappings, since I don't use ctrl+p, ctrl+n or ctrl+f to go up and down
+nmap <C-p> :GFiles<CR>
+nmap <C-n> :Files<CR>
+nmap <C-f> :Rg<CR>
+nmap <C-b> :Buffers<CR>
 
 " Map ,e to open files in the same directory as the current file
 map <leader>e :e <C-R>=expand("%:h")<cr>/
@@ -191,19 +192,13 @@ map <leader>e :e <C-R>=expand("%:h")<cr>/
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
 
-" shortcut to rapidly toggle `set list`
+" Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-" shortcut to change to htmldjnago
-nmap <leader>d :set ft=htmldjango<CR>
-
-" shortcut to search in project
-nnoremap <leader>a :Ack<space>"
-
-" shortcut to map ; to :
+" Shortcut to map ; to :
 nnoremap ; :
  
-" use the same symbols as TextMate for tabstops and EOLs
+" Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
 let g:menu_hidden = 0
@@ -219,8 +214,8 @@ endfunction
 command! ToggleMenu call ToggleMenu()
 nmap <F10> :ToggleMenu<CR>
 
-" Taliban mode!!! alalallalallalallala!
-function! TalibanMode()
+" Hard mode!
+function! HardMode()
     map <up> iisuckatvi
     map <down> iisuckatvi
     map <left> iisuckatvi
@@ -230,9 +225,8 @@ function! TalibanMode()
     imap <left> isuckatvi
     imap <right> isuckatvi
 endfunction
-command! TalibanMode call TalibanMode()
-
-TalibanMode
+command! HardMode call HardMode()
+HardMode
 
 " Set tabs to the thing I say!!!
 function! SetTabs(amount)
@@ -243,31 +237,34 @@ endfunction
 command! -nargs=1 SetTabs call SetTabs(<f-args>)
 
 " Show syntax highlighting groups for word under cursor
-nmap <C-S-X> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
+nmap <leader>x :call SynStack()<CR>
+function! SynStack()
   if !exists("*synstack")
     return
   endif
+
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
 if has("cscope")
-  " uncoment this and set if vim can't find it
+  " Uncoment this and set if vim can't find it
   set csto=0
   set cst
   set nocsverb
-  " add any database in current directory
+
+  " Add any database in current directory
   if filereadable("cscope.out")
     cs add cscope.out
-    " else add database pointed to by environment
+    " Else add database pointed to by environment
   elseif $CSCOPE_DB != ""
     cs add $CSCOPE_DB
   endif
+
   set csverb
 endif
 
 " Use ack to grep
-set grepprg=ack
+set grepprg=rg
 
 " All the small things(tm)
 set mouse=a         " enable mouse
@@ -285,53 +282,220 @@ set shortmess=atI   " abbreviate messages
 set nostartofline   " don't jump to first character when paging
 "set undolevels=200
 set backupdir=/tmp
-set hls
-set showtabline=2
+set showtabline=1
 set hidden
 set cursorline      " Cursor line to see where my cursor is, smart.
-" set t_Co=256
-
-" Autoclean fugitive buffers
-autocmd BufReadPost fugitive://* set bufhidden=delete
+set t_Co=256
+set lazyredraw
 
 let g:JSLintHighlightErrorLine = 0
 
-" Include powerline
-set rtp+=$HOME/.vim/bundle/vim-powerline/powerline/bindings/vim
 set encoding=utf-8
 
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
 let g:rustfmt_autosave = 1
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
-" Nim's JumpToDef
-fun! JumpToDef()
-  if exists("*GotoDefinition_" . &filetype)
-    call GotoDefinition_{&filetype}()
-  else
-    exe "norm! \<C-]>"
-  endif
-endf
+" Syntastic changes, prevent python and use right csharp checker
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_cs_checkers = ['code_checker']
 
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
-set nolazyredraw
-let python_highlight_all = 1
+" Python polyglot highlight all
+let g:python_highlight_all = 1
 
-" let g:omnicomplete_fetch_full_documentation = 1
-" let g:OmniSharp_server_path = "/home/igor/.omnisharp/omnisharp-roslyn/OmniSharp.exe"
-let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
-" let g:OmniSharp_server_use_mono = 1
-let g:OmniSharp_server_stdio = 1
+" Some changes if I ever need OmniSharp
+let g:OmniSharp_selector_ui = 'fzf'  " Use fzf.vim
+let g:OmniSharp_highlighting = 3
+"let g:OmniSharp_server_use_mono = 0
+"let g:OmniSharp_server_stdio = 0
 let g:OmniSharp_server_type = 'roslyn'
-" let g:OmniSharp_prefer_global_sln = 1
+"let g:OmniSharp_prefer_global_sln = 0
 let g:OmniSharp_timeout = 60
-let g:syntastic_cs_checkers = ['code_checker']
+"let g:OmniSharp_want_snippet = 0
 
-" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+if has('nvim') && !exists('g:fzf_layout')
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+endif
+
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
+
+" Semchi
+let g:semshi#simplify_markup=0
+
+" Nvim only stuff
+if has('nvim')
+    " Semshi config
+    exe 'hi pythonBuiltinFunc guifg=none ctermfg=none'
+    exe 'hi pythonBuiltinObj guifg=none ctermfg=none'
+    exe 'hi pythonBuiltinType guifg=none ctermfg=none'
+
+endif
+
+" Mac stuff
+if has("gui_macvim")
+    " Remove Toolbar
+    set guioptions-=T
+
+    " Remove scrollbars
+    set guioptions-=L
+    set guioptions-=r
+
+    " Command-Return for fullscreen
+    macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
+
+    " Command-/ to toggle comments
+    map <D-/> <plug>NERDCommenterToggle<CR>
+    imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+
+    " Gist command
+    let g:gist_clip_command = 'pbcopy'
+
+    " Font
+    set guifont=Iosevka\ Regular:h13
+
+    " Don't beep
+    set visualbell
+endif
+
+" Gvim
+if has('gui_running')
+    set guifont=Iosevka\ Regular\ 13
+
+    "set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+endif
+
+" TODO this should be an && ...
+if !has('gui_running')
+    if !has('GtkGuiLoaded')
+        if !has('gui_macvim')
+            set mouse-=a
+        endif
+    endif
+endif
+
+" NVIMGtk functions
+if exists('g:GtkGuiLoaded')
+    function Font10()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 10')
+    endfunction
+    command! Font10 call Font10()
+
+    function Font11()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 11')
+    endfunction
+    command! Font11 call Font11()
+
+    function Font12()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 12')
+    endfunction
+    command! Font12 call Font12()
+
+    function Font13()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 13')
+    endfunction
+    command! Font13 call Font13()
+
+    function Font14()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 14')
+    endfunction
+    command! Font14 call Font14()
+
+    function Font15()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 15')
+    endfunction
+    command! Font15 call Font15()
+
+    function Font16()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 16')
+    endfunction
+    command! Font16 call Font16()
+
+    function Font25()
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 25')
+    endfunction
+    command! Font25 call Font25()
+
+    " Use GTK  clipboard
+    let g:GuiInternalClipboard = 1
+
+    " Disable native popup an use nvim one instead
+    call rpcnotify(1, 'Gui', 'Option', 'Popupmenu', 0)
+
+    " Use Iosevka's font without features. Fira Code style (ss05)
+    call rpcnotify(1, 'Gui', 'FontFeatures', 'calt off,ss05')
+
+    " or with with C-Like features for operators and other characters
+    " call rpcnotify(1, 'Gui', 'FontFeatures', 'CLIK,ss05')
+
+    " Set font to 14 works on my laptop on my monitor though I like 12 (:Font12)
+    Font13
+
+    " Set the mouse so I can copy to clipboard
+    set mouse=a
+endif
+
+" Lightline
+let g:lightline = {
+\   'active': {
+\     'left': [
+\       [ 'mode', 'paste' ],
+\       [ 'gitbranch', 'filename', 'readonly', 'modified' ]
+\     ],
+\     'right':[
+\       [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
+\       [ 'blame' ]
+\     ],
+\   },
+\   'component_function': {
+\     'gitbranch': 'FugitiveHead'
+\   },
+\   'colorscheme': 'danger'
+\ }
+
+
+" Use <leader><space> to run CocAction to show possible solutions to errors
+" my leader key is `,` so `,<space>` then navigate via jk on the quickfix
+" window
+nmap <leader>a :CocAction<CR>
+nmap <leader><space> :CocDiagnostics<CR>
+
+" Configure snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Extra quirks that I like to get rid of
+set cmdheight=1
+set updatetime=300
+set signcolumn=auto
+set noshowmode
+
+" Include coc configuration
+if filereadable(expand("~/.coc.local.vim"))
+    source ~/.coc.local.vim
+endif
+
+" Include user's local nvim config and rewrites
+if filereadable(expand("~/.vimrc.local.vim"))
+    source ~/.vimrc.local.vim
 endif

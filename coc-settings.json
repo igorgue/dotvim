@@ -1,0 +1,28 @@
+{
+  "suggest.triggerCompletionWait": 30,
+  "suggest.autoTrigger": "always",
+  "suggest.enablePreview": true,
+  "suggest.echodocSupport": true,
+  "suggest.removeDuplicateItems": true,
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.refreshAfterSave": true,
+  "python.jediEnabled": false,
+  "python.autoComplete.extraPaths": ["/home/igor/.cache/fakegir"],
+  "python.analysis.disabled": ["inherit-non-class"],
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--max-line-length", "200"],
+  "html.autoClosingTags": true,
+  "git.enableGutters": true,
+  "xml.java.home": "/usr/lib/jvm/default-java",
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.messageLevel": "more",
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "omnisharp.useDotnet": false,
+  "languageserver": {
+      "nim": {
+          "command": "nimlsp",
+          "filetypes": ["nim"]
+      }
+  }
+}
