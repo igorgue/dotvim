@@ -27,7 +27,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'puremourning/vimspector'
-    Plug 'igorgue/danger'
+
+    " Local plugs for development
+    Plug '~/Code/danger' " Also just 'igorgue/danger'
 
     " Nvim only pluggins
     if has('nvim')
@@ -484,16 +486,16 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
+" Include coc configuration
+if filereadable(expand("~/.coc.local.vim"))
+    source ~/.coc.local.vim
+endif
+
 " Extra quirks that I like to get rid of
 set cmdheight=1
 set updatetime=300
 set signcolumn=auto
 set noshowmode
-
-" Include coc configuration
-if filereadable(expand("~/.coc.local.vim"))
-    source ~/.coc.local.vim
-endif
 
 " Include user's local nvim config and rewrites
 if filereadable(expand("~/.vimrc.local.vim"))
