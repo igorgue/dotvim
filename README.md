@@ -22,4 +22,12 @@ First time opening `vim` might give you some errors, those are the missing plugi
 :PlugInstall
 ```
 
-Reboot vim or nvim or gvim or macvim (it works on all) and that's it, enjoy.
+Reboot vim or nvim or gvim or macvim (it works on all).
+
+I use `coc` for the auto-complete, each extension requires its own care, but in general you need `nodejs` installed, install via apt or do:
+
+```sh
+curl -sL install-node.now.sh/lts | bash
+```
+
+And that's it, enjoy.
