@@ -201,19 +201,6 @@ nnoremap ; :
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-let g:menu_hidden = 0
-function! ToggleMenu()
-    if g:menu_hidden
-        set guioptions+=m
-        let g:menu_hidden = 0
-    else
-        set guioptions-=m
-        let g:menu_hidden = 1
-    endif
-endfunction
-command! ToggleMenu call ToggleMenu()
-nmap <F10> :ToggleMenu<CR>
-
 " Hard mode!
 function! HardMode()
     map <up> iisuckatvi
@@ -325,16 +312,16 @@ endif
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
 
-" Semchi
-let g:semshi#simplify_markup=0
-
 " Nvim only stuff
 if has('nvim')
     " Semshi config
+
+    " Semchi
+    let g:semshi#simplify_markup=0
+
     exe 'hi pythonBuiltinFunc guifg=none ctermfg=none'
     exe 'hi pythonBuiltinObj guifg=none ctermfg=none'
     exe 'hi pythonBuiltinType guifg=none ctermfg=none'
-
 endif
 
 " Mac stuff
@@ -367,19 +354,28 @@ endif
 if has('gui_running')
     set guifont=Iosevka\ Regular\ 13
 
+    let g:menu_hidden = 0
+    function! ToggleMenu()
+        if g:menu_hidden
+            set guioptions+=m
+            let g:menu_hidden = 0
+        else
+            set guioptions-=m
+            let g:menu_hidden = 1
+        endif
+    endfunction
+    command! ToggleMenu call ToggleMenu()
+    nmap <F10> :ToggleMenu<CR>
+
     "set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll bar
 endif
 
-" TODO this should be an && ...
-if !has('gui_running')
-    if !has('GtkGuiLoaded')
-        if !has('gui_macvim')
-            set mouse-=a
-        endif
-    endif
+" Make mouse on terminal work be able to copy paste
+if !has('gui_running') && !has('gui_macvim') && !has('GtkGuiLoaded')
+    set mouse-=a
 endif
 
 " NVIMGtk functions
