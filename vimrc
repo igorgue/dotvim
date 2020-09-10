@@ -334,7 +334,18 @@ if has("gui_macvim")
     set guioptions-=r
 
     " Command-Return for fullscreen
-    macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
+    let g:mac_fullscreen = 0
+    function! ToggleMacFullScreen()
+        if g:mac_fullscreen
+            set nofu
+            let g:mac_fullscreen = 0
+        else
+            set fu
+            let g:mac_fullscreen = 1
+        endif
+    endfunction
+    command! ToggleMacFullScreen call ToggleMacFullScreen()
+    nmap <D-CR> :ToggleMacFullScreen<CR>
 
     " Command-/ to toggle comments
     map <D-/> <plug>NERDCommenterToggle<CR>
@@ -344,14 +355,14 @@ if has("gui_macvim")
     let g:gist_clip_command = 'pbcopy'
 
     " Font
-    set guifont=Iosevka\ Regular:h13
+    set guifont=Iosevka:h14
 
     " Don't beep
     set visualbell
 endif
 
 " Gvim
-if has('gui_running')
+if has('gui_running') && has('gui_gtk3')
     set guifont=Iosevka\ Regular\ 13
 
     let g:menu_hidden = 0
