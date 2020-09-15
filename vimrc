@@ -168,10 +168,10 @@ if has("mac")
   map <D-j> gj
   map <D-k> gk
 else
-  map <F2> :NERDTreeToggle<CR>
-  map <F3> :TagbarToggle<CR>
-  map <F4> :noh<CR>
-  map <F5> :noh<CR>
+  " TODO <C-2> Does not work...
+  map <C-3> :NERDTreeToggle<CR>
+  map <C-4> :TagbarToggle<CR>
+  map <C-5> :noh<CR>
 endif
 
 " Window movement without the extra ctrl+w press only ctrl+(h,j,k,l)
@@ -376,7 +376,7 @@ if has('gui_running') && has('gui_gtk3')
         endif
     endfunction
     command! ToggleMenu call ToggleMenu()
-    nmap <F10> :ToggleMenu<CR>
+    nmap <C-0> :ToggleMenu<CR>
 
     "set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
@@ -450,6 +450,9 @@ if exists('g:GtkGuiLoaded')
     set mouse=a
 endif
 
+" vimspector mappings (possible issue with F11!): https://github.com/puremourning/vimspector#human-mode
+let g:vimspector_enable_mappings = 'HUMAN'
+
 " Lightline
 let g:lightline = {
 \   'active': {
@@ -467,7 +470,6 @@ let g:lightline = {
 \   },
 \   'colorscheme': 'danger'
 \ }
-
 
 " Use <leader><space> to run CocAction to show possible solutions to errors
 " my leader key is `,` so `,<space>` then navigate via jk on the quickfix

@@ -18,7 +18,7 @@
   "coc.preferences.colorSupport": true,
   "coc.preferences.messageLevel": "more",
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
-  "omnisharp.useDotnet": false,
+  "omnisharp.useDotnet": true,
   "languageserver": {
       "nim": {
           "command": "nimlsp",
