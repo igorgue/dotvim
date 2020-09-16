@@ -457,12 +457,14 @@ endif
 
 " vimspector mappings (issue with F11!, that's why is not using human mode, and it's Shift+F11 now)
 " but the rest of the bindings are human: https://github.com/puremourning/vimspector#human-mode
-nmap <F5> <Plug>VimspectorContinue
 nmap <F3> <Plug>VimspectorStop
+nmap <S-F3> :VimspectorReset<CR>
 nmap <F4> <Plug>VimspectorRestart
+" Start or continue Vimspector
+nmap <F5> <Plug>VimspectorContinue
 nmap <F6> <Plug>VimspectorPause
 nmap <F9> <Plug>VimspectorToggleBreakpoint
-nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
+nmap <S-F9> <Plug>VimspectorToggleConditionalBreakpoint
 nmap <F8> <Plug>VimspectorAddFunctionBreakpoint
 nmap <F10> <Plug>VimspectorStepOver
 nmap <S-F11> <Plug>VimspectorStepInto
