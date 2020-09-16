@@ -468,7 +468,7 @@ nmap <F12>        <Plug>VimspectorStepOut
 " also change the highlight colors
 sign define vimspectorBP text==>         texthl=MatchParen
 sign define vimspectorBPCond text=?>     texthl=MatchParen
-sign define vimspectorBPDisabled text=!> texthl=Comment
+sign define vimspectorBPDisabled text=!> texthl=Comment linehl=CursorLine
 sign define vimspectorPC text=->         texthl=WarningMsg
 
 " Lightline
