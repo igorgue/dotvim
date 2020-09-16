@@ -32,6 +32,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Nvim only pluggins
     if has('nvim')
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        Plug 'norcalli/nvim-colorizer.lua'
     endif
 call plug#end()
 
@@ -323,6 +324,9 @@ if has('nvim')
     exe 'hi pythonBuiltinFunc guifg=none ctermfg=none'
     exe 'hi pythonBuiltinObj guifg=none ctermfg=none'
     exe 'hi pythonBuiltinType guifg=none ctermfg=none'
+
+    " Colorizer
+    lua require'colorizer'.setup()
 endif
 
 " Mac stuff
@@ -453,23 +457,23 @@ endif
 
 " vimspector mappings (issue with F11!, that's why is not using human mode, and it's Shift+F11 now)
 " but the rest of the bindings are human: https://github.com/puremourning/vimspector#human-mode
-nmap <F5>         <Plug>VimspectorContinue
-nmap <F3>         <Plug>VimspectorStop
-nmap <F4>         <Plug>VimspectorRestart
-nmap <F6>         <Plug>VimspectorPause
-nmap <F9>         <Plug>VimspectorToggleBreakpoint
+nmap <F5> <Plug>VimspectorContinue
+nmap <F3> <Plug>VimspectorStop
+nmap <F4> <Plug>VimspectorRestart
+nmap <F6> <Plug>VimspectorPause
+nmap <F9> <Plug>VimspectorToggleBreakpoint
 nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
-nmap <F8>         <Plug>VimspectorAddFunctionBreakpoint
-nmap <F10>        <Plug>VimspectorStepOver
-nmap <S-F11>      <Plug>VimspectorStepInto
-nmap <F12>        <Plug>VimspectorStepOut
+nmap <F8> <Plug>VimspectorAddFunctionBreakpoint
+nmap <F10> <Plug>VimspectorStepOver
+nmap <S-F11> <Plug>VimspectorStepInto
+nmap <F12> <Plug>VimspectorStepOut
 
 " Since Iosevka doesn't support the default glyphs, this looks better though
 " also change the highlight colors
-sign define vimspectorBP text==>         texthl=MatchParen
-sign define vimspectorBPCond text=?>     texthl=MatchParen
-sign define vimspectorBPDisabled text=!> texthl=Comment linehl=CursorLine
-sign define vimspectorPC text=->         texthl=WarningMsg
+sign define vimspectorBP text=ﱣ texthl=MatchParen
+sign define vimspectorBPCond text=ﱢ texthl=Constant
+sign define vimspectorBPDisabled text=ﱤ texthl=Comment
+sign define vimspectorPC text=ﰲ texthl=CursorColumn linehl=CursorLine
 
 " Lightline
 let g:lightline = {
