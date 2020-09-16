@@ -6,7 +6,7 @@
   "suggest.removeDuplicateItems": true,
   "diagnostic.refreshOnInsertMode": true,
   "diagnostic.virtualText": true,
-  "diagnostic.refreshAfterSave": true,
+  "diagnostic.messageTarget": "echo",
   "python.jediEnabled": false,
   "python.autoComplete.extraPaths": ["/home/igor/.cache/fakegir"],
   "python.analysis.disabled": ["inherit-non-class"],
@@ -19,10 +19,16 @@
   "coc.preferences.messageLevel": "more",
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   "omnisharp.useDotnet": true,
+  "json.schemas": [
+    {
+      "fileMatch": [".vimspector.json"],
+      "url": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json"
+    }
+  ],
   "languageserver": {
-      "nim": {
-          "command": "nimlsp",
-          "filetypes": ["nim"]
-      }
+    "nim": {
+      "command": "nimlsp",
+      "filetypes": ["nim"]
+    }
   }
 }

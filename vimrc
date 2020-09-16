@@ -131,6 +131,7 @@ set backspace=indent,eol,start
 " Use modeline overrides
 set modeline
 
+" Use zsh as shell
 set shell=zsh
 
 " Better mapleader
@@ -450,8 +451,25 @@ if exists('g:GtkGuiLoaded')
     set mouse=a
 endif
 
-" vimspector mappings (possible issue with F11!): https://github.com/puremourning/vimspector#human-mode
-let g:vimspector_enable_mappings = 'HUMAN'
+" vimspector mappings (issue with F11!, that's why is not using human mode, and it's Shift+F11 now)
+" but the rest of the bindings are human: https://github.com/puremourning/vimspector#human-mode
+nmap <F5>         <Plug>VimspectorContinue
+nmap <F3>         <Plug>VimspectorStop
+nmap <F4>         <Plug>VimspectorRestart
+nmap <F6>         <Plug>VimspectorPause
+nmap <F9>         <Plug>VimspectorToggleBreakpoint
+nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
+nmap <F8>         <Plug>VimspectorAddFunctionBreakpoint
+nmap <F10>        <Plug>VimspectorStepOver
+nmap <S-F11>      <Plug>VimspectorStepInto
+nmap <F12>        <Plug>VimspectorStepOut
+
+" Since Iosevka doesn't support the default glyphs, this looks better though
+" also change the highlight colors
+sign define vimspectorBP text==>         texthl=MatchParen
+sign define vimspectorBPCond text=?>     texthl=MatchParen
+sign define vimspectorBPDisabled text=!> texthl=Comment
+sign define vimspectorPC text=->         texthl=WarningMsg
 
 " Lightline
 let g:lightline = {
