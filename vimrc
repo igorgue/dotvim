@@ -26,6 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'honza/vim-snippets'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'antoinemadec/coc-fzf'
     Plug 'puremourning/vimspector'
     Plug 'igorgue/danger'
 
@@ -303,7 +304,7 @@ let g:OmniSharp_highlighting = 3
 "let g:OmniSharp_server_stdio = 0
 let g:OmniSharp_server_type = 'roslyn'
 "let g:OmniSharp_prefer_global_sln = 0
-let g:OmniSharp_timeout = 60
+let g:OmniSharp_timeout = 6000
 "let g:OmniSharp_want_snippet = 0
 
 if has('nvim') && !exists('g:fzf_layout')
@@ -324,6 +325,8 @@ if has('nvim')
     exe 'hi pythonBuiltinFunc guifg=none ctermfg=none'
     exe 'hi pythonBuiltinObj guifg=none ctermfg=none'
     exe 'hi pythonBuiltinType guifg=none ctermfg=none'
+
+    set termguicolors
 
     " Colorizer
     lua require'colorizer'.setup()
