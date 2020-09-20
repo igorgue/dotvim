@@ -479,6 +479,7 @@ sign define vimspectorBP text=ﱣ texthl=MatchParen
 sign define vimspectorBPCond text=ﱢ texthl=Constant
 sign define vimspectorBPDisabled text=ﱤ texthl=Comment
 sign define vimspectorPC text=ﰲ texthl=CursorColumn linehl=CursorLine
+sign define vimspectorPCBP text=ﱪ texthl=Constant
 
 " Lightline
 let g:lightline = {
