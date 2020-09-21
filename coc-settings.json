@@ -8,6 +8,7 @@
   "diagnostic.virtualText": true,
   "diagnostic.messageTarget": "echo",
   "python.jediEnabled": false,
+  "python.venvFolders": [".env", "env", ".venv", "venv"],
   "python.autoComplete.extraPaths": ["/home/igor/.cache/fakegir"],
   "python.analysis.disabled": ["inherit-non-class"],
   "python.linting.flake8Enabled": true,
