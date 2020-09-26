@@ -95,7 +95,7 @@ if has("autocmd")
 
     " Code indentation and file detection
     " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-    au BufRead,BufNewFile {Procfile.*,Gemfile,Rakefile,Capfile,Vagrantfile,Thorfile,*.ru,*.feature} set ft=ruby
+    au BufRead,BufNewFile {Procfile,Procfile.*,Gemfile,Rakefile,Capfile,Vagrantfile,Thorfile,*.ru,*.feature} set ft=ruby
     au BufNewFile,BufRead *.feature setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
     " Code indentation
