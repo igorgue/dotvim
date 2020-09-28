@@ -328,6 +328,8 @@ if has('nvim')
 
     set termguicolors
 
+    tnoremap <Esc> <C-\><C-n>
+
     " Colorizer
     lua require'colorizer'.setup()
 endif
