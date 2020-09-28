@@ -46,6 +46,7 @@ let g:coc_global_extensions = [
     \ 'coc-yaml', 'coc-tag', 'coc-dictionary'
 \]
 
+set background=dark
 colorscheme danger
 
 set nocompatible    " use nvim defaults
@@ -77,6 +78,17 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.py
 
 let NERDTreeSortOrder=['^__\.py$', '\.pyc$', '__pycache__$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
+
+" Tab movement on normal mode via:
+" Tab + j or l (next), k or h (previous), x (close), or, n (new)
+nnoremap <silent> <Tab>j :tabnext<CR>
+nnoremap <silent> <Tab>l :tabnext<CR>
+
+nnoremap <silent> <Tab>h :tabprevious<CR>
+nnoremap <silent> <Tab>k :tabprevious<CR>
+
+nnoremap <silent> <Tab>x :tabclose<CR>
+nnoremap <silent> <Tab>n :tabnew<CR>
 
 if has("autocmd")
     " Remember last location in file
@@ -327,8 +339,6 @@ if has('nvim')
     exe 'hi pythonBuiltinType guifg=none ctermfg=none'
 
     set termguicolors
-
-    tnoremap <Esc> <C-\><C-n>
 
     " Colorizer
     lua require'colorizer'.setup()
