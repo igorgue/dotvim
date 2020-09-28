@@ -80,7 +80,7 @@ let NERDTreeSortOrder=['^__\.py$', '\.pyc$', '__pycache__$', '\/$', '*', '\.swp$
 let NERDTreeShowBookmarks=1
 
 " Tab movement on normal mode via:
-" Tab + j or l (next), k or h (previous), x (close), or, n (new)
+" Tab + j or l (next), k or h (previous), x or q (close), or, n (new)
 nnoremap <silent> <Tab>j :tabnext<CR>
 nnoremap <silent> <Tab>l :tabnext<CR>
 
@@ -88,6 +88,8 @@ nnoremap <silent> <Tab>h :tabprevious<CR>
 nnoremap <silent> <Tab>k :tabprevious<CR>
 
 nnoremap <silent> <Tab>x :tabclose<CR>
+nnoremap <silent> <Tab>q :tabclose<CR>
+
 nnoremap <silent> <Tab>n :tabnew<CR>
 
 if has("autocmd")
