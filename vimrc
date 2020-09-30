@@ -327,7 +327,33 @@ if has('nvim') && !exists('g:fzf_layout')
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 endif
 
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
+if exists("g:gnvim")
+    let $FZF_DEFAULT_OPTS=' --layout=reverse --margin=1,4'
+    let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+    function! FloatingFZF()
+      let buf = nvim_create_buf(v:false, v:true)
+      call setbufvar(buf, '&signcolumn', 'no')
+
+      let height = 20
+      let width = 120
+      let horizontal = float2nr((&columns - width) / 2)
+      let vertical = 13
+
+      let opts = {
+            \ 'relative': 'editor',
+            \ 'row': vertical,
+            \ 'col': horizontal,
+            \ 'width': width,
+            \ 'height': height,
+            \ 'style': 'minimal',
+            \ }
+
+      call nvim_open_win(buf, v:true, opts)
+    endfunction
+else
+    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
+endif
 
 " Nvim only stuff
 if has('nvim')
@@ -385,7 +411,7 @@ endif
 
 " Gvim
 if has('gui_running') && has('gui_gtk3')
-    set guifont=Iosevka\ Regular\ 13
+    set guifont=Iosevka\ 13
 
     let g:menu_hidden = 0
     function! ToggleMenu()
@@ -411,45 +437,52 @@ if !has('gui_running') && !has('gui_macvim') && !has('GtkGuiLoaded')
     set mouse-=a
 endif
 
+" GNvim
+if exists("g:gnvim")
+    set guifont=Iosevka:h13
+
+    set guicursor+=a:blinkon333
+endif
+
 " NVIMGtk functions
 if exists('g:GtkGuiLoaded')
     function Font10()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 10')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 10')
     endfunction
     command! Font10 call Font10()
 
     function Font11()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 11')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 11')
     endfunction
     command! Font11 call Font11()
 
     function Font12()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 12')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 12')
     endfunction
     command! Font12 call Font12()
 
     function Font13()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 13')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 13')
     endfunction
     command! Font13 call Font13()
 
     function Font14()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 14')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 14')
     endfunction
     command! Font14 call Font14()
 
     function Font15()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 15')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 15')
     endfunction
     command! Font15 call Font15()
 
     function Font16()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 16')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 16')
     endfunction
     command! Font16 call Font16()
 
     function Font25()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 25')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 25')
     endfunction
     command! Font25 call Font25()
 
@@ -465,7 +498,7 @@ if exists('g:GtkGuiLoaded')
     " or with with C-Like features for operators and other characters
     " call rpcnotify(1, 'Gui', 'FontFeatures', 'CLIK,ss05')
 
-    " Set font to 14 works on my laptop on my monitor though I like 12 (:Font12)
+    " Set font to 13 works on my laptop on my monitor though I like 12 on bigger monitors (:Font12)
     Font13
 
     " Set the mouse so I can copy to clipboard
