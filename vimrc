@@ -1,55 +1,49 @@
 call plug#begin('~/.config/nvim/plugged')
     " Keep Plug commands between plug#begin/end.
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'itchyny/lightline.vim'
-    Plug 'chriskempson/vim-tomorrow-theme'
-    Plug 'preservim/nerdtree'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-speeddating'
-    Plug 'tpope/vim-git'
-    Plug 'michaeljsmith/vim-indent-object'
-    Plug 'mattn/gist-vim'
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'scrooloose/syntastic'
-    Plug 'majutsushi/tagbar'
-    Plug 'preservim/nerdcommenter'
-    Plug 'tsaleh/vim-align'
-    Plug 'docunext/closetag.vim'
-    Plug 'vim-scripts/hexHighlight.vim'
-    Plug 'vim-python/python-syntax'
-    Plug 'chrisbra/Colorizer'
-    Plug 'vim-crystal/vim-crystal'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'OmniSharp/omnisharp-vim'
-    Plug 'sainnhe/edge'
+    Plug 'antoinemadec/coc-fzf'
     Plug 'honza/vim-snippets'
+    Plug 'igorgue/danger'
+    Plug 'itchyny/lightline.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'antoinemadec/coc-fzf'
+    Plug 'mattn/gist-vim'
+    Plug 'mattn/webapi-vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'OmniSharp/omnisharp-vim'
+    Plug 'preservim/nerdcommenter'
+    Plug 'preservim/nerdtree'
+    Plug 'preservim/tagbar'
     Plug 'puremourning/vimspector'
-    Plug 'igorgue/danger'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-git'
+    Plug 'tpope/vim-speeddating'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-crystal/vim-crystal'
+    Plug 'vim-python/python-syntax'
 
     " Nvim only pluggins
     if has('nvim')
-        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         Plug 'norcalli/nvim-colorizer.lua'
+        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
     endif
 call plug#end()
 
 " Coc default extensions
-let g:coc_global_extensions = [
+let g:coc_global_extensions=[
     \ 'coc-clangd', 'coc-css', 'coc-git', 'coc-highlight', 
     \ 'coc-html', 'coc-json', 'coc-omnisharp', 'coc-pairs',
     \ 'coc-python', 'coc-sh', 'coc-snippets', 'coc-sql',
     \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
-    \ 'coc-yaml', 'coc-tag', 'coc-dictionary'
-\]
+    \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-utils',
+    \ 'coc-prettier', 'coc-marketplace', 'coc-diagnostic',
+\ ]
 
+" My theme: Danger
 set background=dark
 colorscheme danger
 
-set nocompatible    " use nvim defaults
+set nocompatible    " use vim defaults
 set number          " show line numbers
 set numberwidth=4   " line numbering takes up to 4 spaces
 set ruler           " show the cursor position all the time
@@ -62,7 +56,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-"set list            " show list chars
+
+" Show invisibles
+"set list
 
 " Searching
 set hlsearch
@@ -76,6 +72,7 @@ set wildmenu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.bak,*.exe,*.pyc,*.dll,*.pdb,*.DS_Store,*.db,env,*/debug/*,*/Debug/*,*/publish/*
 
+" Nerdtree ignores
 let NERDTreeSortOrder=['^__\.py$', '\.pyc$', '__pycache__$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 
@@ -131,11 +128,12 @@ if has("autocmd")
 endif
 
 " Extra nerd commenter configs
-let g:NERDCustomDelimiters = { 
+let g:NERDCustomDelimiters={
     \ 'nim': { 'left': '# ', 'right': '' },
     \ 'python': { 'left': '# ', 'right': '' },
     \ 'ruby': { 'left': '# ', 'right': '' },
-    \ 'json': { 'left': '// ', 'right': '' }
+    \ 'json': { 'left': '// ', 'right': '' },
+    \ 'javascript': { 'left': '// ', 'right': '' }
 \ }
 
 " Add support for jsonc
@@ -151,7 +149,7 @@ set modeline
 set shell=zsh
 
 " Better mapleader
-let mapleader = ","
+let mapleader=","
 
 " Default tab settings
 set tabstop=4       " number of spaces for tab character
@@ -170,8 +168,8 @@ endif
 set viminfo='20,<50,s10,h
 
 " Omni completion
-"set omnifunc=syntaxcomplete#Complete
-"let g:omnicomplete_fetch_full_documentation = 1
+set omnifunc=syntaxcomplete#Complete
+let g:omnicomplete_fetch_full_documentation=1
 
 " Syntax for multiple tag files are
 " Set tags=/my/dir1/tags, /my/dir2/tags
@@ -292,55 +290,109 @@ set cursorline      " Cursor line to see where my cursor is, smart.
 set t_Co=256
 set lazyredraw
 
-let g:JSLintHighlightErrorLine = 0
+let g:JSLintHighlightErrorLine=0
 
 set encoding=utf-8
 
-let g:racer_experimental_completer = 1
-let g:racer_insert_paren = 1
-let g:rustfmt_autosave = 1
+let g:racer_experimental_completer=1
+let g:racer_insert_paren=1
+let g:rustfmt_autosave=1
 
-" Syntastic changes, prevent python and use right csharp checker
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
-let g:syntastic_cs_checkers = ['code_checker']
+" Gist command (Linux version)
+let g:gist_clip_command='xsel --clipboard --input'
 
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
-" Python polyglot highlight all
-let g:python_highlight_all = 1
+" python-syntax highlight all
+let g:python_highlight_all=1
 
-" Some changes if I ever need OmniSharp
-let g:OmniSharp_selector_ui = 'fzf'  " Use fzf.vim
-let g:OmniSharp_highlighting = 3
-"let g:OmniSharp_server_use_mono = 0
-"let g:OmniSharp_server_stdio = 0
-let g:OmniSharp_server_type = 'roslyn'
-"let g:OmniSharp_prefer_global_sln = 0
-let g:OmniSharp_timeout = 6000
-"let g:OmniSharp_want_snippet = 0
+" OmniSharp configuration
+let g:OmniSharp_diagnostic_showid=1
+let g:OmniSharp_highlighting=3
+let g:OmniSharp_popup=1 " Show vim popups or floats
+let g:OmniSharp_selector_findusages='fzf' " Use fzf.vim for ui stuff
+let g:OmniSharp_selector_ui='fzf'
+let g:OmniSharp_timeout=60000 " Basically no timeout
+"let g:OmniSharp_loglevel='debug'
+"let g:OmniSharp_prefer_global_sln=0
+"let g:OmniSharp_server_stdio=0
+"let g:OmniSharp_server_type='roslyn'
+"let g:OmniSharp_server_use_mono=0
+"let g:OmniSharp_want_snippet=0
 
+augroup omnisharp_commands
+    autocmd!
+
+    " Show type information automatically when the cursor stops moving.
+    " Note that the type is echoed to the Vim command line, and will overwrite
+    " any other messages in this space including e.g. ALE linting messages.
+    autocmd CursorHold *.cs OmniSharpTypeLookup
+
+    " Omnifunc
+    autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+
+    " The following commands are contextual, based on the cursor position.
+    autocmd FileType cs nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
+    autocmd FileType cs nmap <silent> <buffer> gi <Plug>(omnisharp_find_implementations)
+    autocmd FileType cs nmap <silent> <buffer> gu <Plug>(omnisharp_find_usages)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osfu <Plug>(omnisharp_find_usages)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osfi <Plug>(omnisharp_find_implementations)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>ospd <Plug>(omnisharp_preview_definition)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>ospi <Plug>(omnisharp_preview_implementations)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>ost <Plug>(omnisharp_type_lookup)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osd <Plug>(omnisharp_documentation)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osfs <Plug>(omnisharp_find_symbol)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osfx <Plug>(omnisharp_fix_usings)
+    autocmd FileType cs nmap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+    autocmd FileType cs imap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+
+    " Navigate up and down by method/property/field
+    autocmd FileType cs nmap <silent> <buffer> [[ <Plug>(omnisharp_navigate_up)
+    autocmd FileType cs nmap <silent> <buffer> ]] <Plug>(omnisharp_navigate_down)
+    " Find all code errors/warnings for the current solution and populate the quickfix window
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osgcc <Plug>(omnisharp_global_code_check)
+    " Contextual code actions (uses fzf, vim-clap, CtrlP or unite.vim selector when available)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
+    autocmd FileType cs xmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
+    " Repeat the last code action performed (does not use a selector)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
+    autocmd FileType cs xmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
+
+    autocmd FileType cs nmap <silent> <buffer> <Leader>os= <Plug>(omnisharp_code_format)
+
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osnm <Plug>(omnisharp_rename)
+
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osre <Plug>(omnisharp_restart_server)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
+    autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
+augroup END
+
+" fzf
 if has('nvim') && !exists('g:fzf_layout')
   autocmd! FileType fzf
   autocmd  FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 endif
 
-if exists("g:gnvim")
+" fzf layout config
+if !exists("g:gnvim")
+    let g:fzf_layout={ 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
+else
     let $FZF_DEFAULT_OPTS=' --layout=reverse --margin=1,4'
-    let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+    let g:fzf_layout={ 'window': 'call FloatingFZF()' }
 
     function! FloatingFZF()
-      let buf = nvim_create_buf(v:false, v:true)
+      let buf=nvim_create_buf(v:false, v:true)
       call setbufvar(buf, '&signcolumn', 'no')
 
-      let height = 20
-      let width = 120
-      let horizontal = float2nr((&columns - width) / 2)
-      let vertical = 13
+      let height=20
+      let width=120
+      let horizontal=float2nr((&columns - width) / 2)
+      let vertical=13
 
-      let opts = {
+      let opts={
             \ 'relative': 'editor',
             \ 'row': vertical,
             \ 'col': horizontal,
@@ -351,8 +403,6 @@ if exists("g:gnvim")
 
       call nvim_open_win(buf, v:true, opts)
     endfunction
-else
-    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
 endif
 
 " Nvim only stuff
@@ -382,14 +432,14 @@ if has("gui_macvim")
     set guioptions-=r
 
     " Command-Return for fullscreen
-    let g:mac_fullscreen = 0
+    let g:mac_fullscreen=0
     function! ToggleMacFullScreen()
         if g:mac_fullscreen
             set nofu
-            let g:mac_fullscreen = 0
+            let g:mac_fullscreen=0
         else
             set fu
-            let g:mac_fullscreen = 1
+            let g:mac_fullscreen=1
         endif
     endfunction
     command! ToggleMacFullScreen call ToggleMacFullScreen()
@@ -400,7 +450,7 @@ if has("gui_macvim")
     imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
     " Gist command
-    let g:gist_clip_command = 'pbcopy'
+    let g:gist_clip_command='pbcopy'
 
     " Font
     set guifont=Iosevka:h14
@@ -411,16 +461,16 @@ endif
 
 " Gvim
 if has('gui_running') && has('gui_gtk3')
-    set guifont=Iosevka\ Fixed\ 14
+    set guifont=Iosevka\ Term\ 14
 
-    let g:menu_hidden = 0
+    let g:menu_hidden=0
     function! ToggleMenu()
         if g:menu_hidden
             set guioptions+=m
-            let g:menu_hidden = 0
+            let g:menu_hidden=0
         else
             set guioptions-=m
-            let g:menu_hidden = 1
+            let g:menu_hidden=1
         endif
     endfunction
     command! ToggleMenu call ToggleMenu()
@@ -433,61 +483,66 @@ if has('gui_running') && has('gui_gtk3')
 endif
 
 " Make mouse on terminal work be able to copy paste
-if !has('gui_running') && !has('gui_macvim') && !has('GtkGuiLoaded')
+if !has('gui_running') && !has('gui_macvim') && !has('GtkGuiLoaded') && !exists("g:gnvim")
     set mouse-=a
 endif
 
 " GNvim
 if exists("g:gnvim")
+    " Font
     set guifont=Iosevka:h14
 
+    " Mouse blinking: on
     set guicursor+=a:blinkon333
 endif
 
 " NVIMGtk functions
 if exists('g:GtkGuiLoaded')
+    " This is my main editor
+
+    " Setup fonts
     function Font10()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 10')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 10')
     endfunction
     command! Font10 call Font10()
 
     function Font11()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 11')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 11')
     endfunction
     command! Font11 call Font11()
 
     function Font12()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 12')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 12')
     endfunction
     command! Font12 call Font12()
 
     function Font13()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 13')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 13')
     endfunction
     command! Font13 call Font13()
 
     function Font14()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 14')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 14')
     endfunction
     command! Font14 call Font14()
 
     function Font15()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 15')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 15')
     endfunction
     command! Font15 call Font15()
 
     function Font16()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 16')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 16')
     endfunction
     command! Font16 call Font16()
 
     function Font25()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Fixed 25')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 25')
     endfunction
     command! Font25 call Font25()
 
     " Use GTK  clipboard
-    let g:GuiInternalClipboard = 1
+    let g:GuiInternalClipboard=1
 
     " Disable native popup an use nvim one instead
     call rpcnotify(1, 'Gui', 'Option', 'Popupmenu', 0)
@@ -505,7 +560,7 @@ if exists('g:GtkGuiLoaded')
     set mouse=a
 endif
 
-" vimspector mappings (issue with F11!, that's why is not using human mode, and it's Shift+F11 now)
+" Vimspector mappings (issue with F11!, that's why is not using human mode, and it's Shift+F11 now)
 " but the rest of the bindings are human: https://github.com/puremourning/vimspector#human-mode
 nmap <F3> <Plug>VimspectorStop
 nmap <S-F3> :VimspectorReset<CR>
@@ -529,19 +584,19 @@ sign define vimspectorPC text=\ > texthl=CursorColumn linehl=CursorLine
 sign define vimspectorPCBP text=o> texthl=Constant
 
 " Lightline
-let g:lightline = {
+let g:lightline={
 \   'active': {
-\     'left': [
-\       [ 'mode', 'paste' ],
-\       [ 'gitbranch', 'filename', 'readonly', 'modified' ]
-\     ],
-\     'right':[
-\       [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
-\       [ 'blame' ]
-\     ],
+\       'left': [
+\           [ 'mode', 'paste' ],
+\           [ 'gitbranch', 'filename', 'readonly', 'modified' ]
+\       ],
+\       'right':[
+\           [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
+\           [ 'blame' ]
+\       ],
 \   },
 \   'component_function': {
-\     'gitbranch': 'FugitiveHead'
+\       'gitbranch': 'FugitiveHead'
 \   },
 \   'colorscheme': 'danger'
 \ }
@@ -560,10 +615,10 @@ imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_next='<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+let g:coc_snippet_prev='<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
