@@ -244,16 +244,7 @@ endfunction
 command! UnHardMode call UnHardMode()
 command! HardMode call HardMode()
 
-" Set hardmode, never get unused to vim
-autocmd FileType * call HardMode()
-
-if has("nvim")
-    autocmd TermOpen * if &buftype == 'terminal' | call UnHardMode() | endif
-    autocmd TermClose * call HardMode()
-else
-    autocmd TerminalOpen * if &buftype == 'terminal' | call UnHardMode() | endif
-    autocmd TermimalClose * call HardMode()
-end
+HardMode
 
 " Set tabs to the thing I say!!!
 function! SetTabs(amount)
