@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'mattn/gist-vim'
     Plug 'mattn/webapi-vim'
+    Plug 'michaeljsmith/vim-indent-object'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'OmniSharp/omnisharp-vim'
     Plug 'preservim/nerdcommenter'
@@ -217,6 +218,7 @@ nnoremap ; :
 set listchars=tab:▸\ ,eol:¬
 
 " Hard mode!
+let g:hard_mode=0
 function! HardMode()
     map <up> iisuckatvi
     map <down> iisuckatvi
@@ -226,9 +228,32 @@ function! HardMode()
     imap <down> isuckatvi
     imap <left> isuckatvi
     imap <right> isuckatvi
+
+    let g:hard_mode=1
 endfunction
+function! UnHardMode()
+    if g:hard_mode
+        unmap <up>
+        unmap <down>
+        unmap <left>
+        unmap <right>
+    endif
+
+    let g:hard_mode=0
+endfunction
+command! UnHardMode call UnHardMode()
 command! HardMode call HardMode()
-HardMode
+
+" Set hardmode, never get unused to vim
+autocmd FileType * call HardMode()
+
+if has("nvim")
+    autocmd TermOpen * if &buftype == 'terminal' | call UnHardMode() | endif
+    autocmd TermClose * call HardMode()
+else
+    autocmd TerminalOpen * if &buftype == 'terminal' | call UnHardMode() | endif
+    autocmd TermimalClose * call HardMode()
+end
 
 " Set tabs to the thing I say!!!
 function! SetTabs(amount)
