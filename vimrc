@@ -1,6 +1,50 @@
+if exists('g:vscode')
+    call plug#begin('~/.config/nvim/plugged')
+        " Keep Plug commands between plug#begin/end.
+        Plug 'michaeljsmith/vim-indent-object'
+        Plug 'preservim/nerdcommenter'
+        Plug 'tpope/vim-speeddating'
+        Plug 'tpope/vim-surround'
+    call plug#end()
+
+    set nocompatible " use vim defaults
+    set backspace=indent,eol,start " Allow backspacing over everything in insert mode
+    let mapleader=","
+    command! W :w " Seriously, guys. It's not like :W is bound to anything anyway.
+
+    map <C-5> :noh<CR>
+
+    " Window movement without the extra ctrl+w press only ctrl+(h,j,k,l)
+    nmap <C-h> <C-w>h
+    nmap <C-j> <C-w>j
+    nmap <C-k> <C-w>k
+    nmap <C-l> <C-w>l
+
+    " Shortcut to rapidly toggle `set list`
+    nmap <leader>l :set list!<CR>
+
+    " Shortcut to map ; to :
+    nnoremap ; :
+    set nostartofline   " don't jump to first character when paging
+    set sm              " show matching braces
+
+    " Searching
+    set hlsearch
+    set incsearch
+    set ignorecase
+    set smartcase
+    set wildignorecase
+
+    set omnifunc=syntaxcomplete#Complete
+    let g:omnicomplete_fetch_full_documentation=1
+
+    finish
+endif
+
 call plug#begin('~/.config/nvim/plugged')
     " Keep Plug commands between plug#begin/end.
     Plug 'antoinemadec/coc-fzf'
+    Plug 'elixir-editors/vim-elixir'
     Plug 'honza/vim-snippets'
     Plug 'igorgue/danger'
     Plug 'itchyny/lightline.vim'
@@ -25,7 +69,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Nvim only pluggins
     if has('nvim')
-        Plug 'norcalli/nvim-colorizer.lua'
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
     endif
 call plug#end()
@@ -38,6 +81,7 @@ let g:coc_global_extensions=[
     \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
     \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-utils',
     \ 'coc-prettier', 'coc-marketplace', 'coc-diagnostic',
+    \ 'coc-elixir',
 \ ]
 
 " My theme: Danger
@@ -433,9 +477,6 @@ if has('nvim')
     exe 'hi pythonBuiltinType guifg=none ctermfg=none'
 
     set termguicolors
-
-    " Colorizer
-    lua require'colorizer'.setup()
 endif
 
 " Mac stuff
