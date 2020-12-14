@@ -75,13 +75,12 @@ call plug#end()
 
 " Coc default extensions
 let g:coc_global_extensions=[
-    \ 'coc-clangd', 'coc-css', 'coc-git', 'coc-highlight', 
+    \ 'coc-clangd', 'coc-css', 'coc-git', 'coc-highlight',
     \ 'coc-html', 'coc-json', 'coc-omnisharp', 'coc-pairs',
     \ 'coc-python', 'coc-sh', 'coc-snippets', 'coc-sql',
     \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
-    \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-utils',
-    \ 'coc-prettier', 'coc-marketplace', 'coc-diagnostic',
-    \ 'coc-elixir',
+    \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-prettier',
+    \ 'coc-marketplace', 'coc-diagnostic', 'coc-elixir'
 \ ]
 
 " My theme: Danger
@@ -133,6 +132,18 @@ nnoremap <silent> <Tab>x :tabclose<CR>
 nnoremap <silent> <Tab>q :tabclose<CR>
 
 nnoremap <silent> <Tab>n :tabnew<CR>
+
+" Setting 't' also because I keep using it
+nnoremap <silent> tj :tabnext<CR>
+nnoremap <silent> tl :tabnext<CR>
+
+nnoremap <silent> th :tabprevious<CR>
+nnoremap <silent> tk :tabprevious<CR>
+
+nnoremap <silent> tx :tabclose<CR>
+nnoremap <silent> tq :tabclose<CR>
+
+nnoremap <silent> tn :tabnew<CR>
 
 if has("autocmd")
     " Remember last location in file
@@ -623,6 +634,7 @@ nmap <F3> <Plug>VimspectorStop
 nmap <S-F3> :VimspectorReset<CR>
 nmap <F4> <Plug>VimspectorRestart
 " Start or continue Vimspector
+nmap <C-F5> :make<CR>
 nmap <F5> <Plug>VimspectorContinue
 nmap <F6> <Plug>VimspectorPause
 nmap <F9> <Plug>VimspectorToggleBreakpoint
