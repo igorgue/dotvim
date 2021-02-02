@@ -5,7 +5,7 @@
   "diagnostic.messageTarget": "echo",
   "diagnostic.virtualText": true,
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
-  "git.enableGutters": true,
+  "git.enableGutters": false,
   "html.autoClosingTags": true,
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   "python.analysis.disabled": ["inherit-non-class"],
