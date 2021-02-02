@@ -1,3 +1,6 @@
+" Env variables everyone needs!
+let $BAT_THEME="danger"
+
 if exists('g:vscode')
     call plug#begin('~/.config/nvim/plugged')
         " Keep Plug commands between plug#begin/end.
