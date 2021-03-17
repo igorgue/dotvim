@@ -80,8 +80,9 @@ if exists('g:fvim_loaded') && !exists('g:GtkGuiLoaded')
     command! Font25 call Font25()
 
     "Font17
-    set guifont=Iosevka\ Term:h17
+    set guifont=Iosevka\ Term:h20
 
     " Set the mouse so I can copy to clipboard
     set mouse=a
+    set cmdheight=2
 endif
