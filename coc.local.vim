@@ -151,3 +151,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Sources configuration for C#
+let g:coc_sources_disable_map = { 'cs': ['cs-2', 'cs-3'] }
