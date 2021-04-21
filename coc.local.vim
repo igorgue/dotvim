@@ -153,4 +153,4 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Sources configuration for C#
-let g:coc_sources_disable_map = { 'cs': ['cs-2', 'cs-3'] }
+let g:coc_sources_disable_map = { 'cs': ['cs-2', 'cs-3', 'OmniSharp', 'around'] }
