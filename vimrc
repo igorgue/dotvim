@@ -72,7 +72,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Nvim only pluggins
     if has('nvim')
+        Plug 'neovim/nvim-lspconfig'
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        Plug 'simrat39/symbols-outline.nvim'
     endif
 call plug#end()
 
@@ -80,7 +82,7 @@ call plug#end()
 let g:coc_global_extensions=[
     \ 'coc-clangd', 'coc-css', 'coc-git', 'coc-highlight',
     \ 'coc-html', 'coc-json', 'coc-omnisharp', 'coc-pairs',
-    \ 'coc-python', 'coc-sh', 'coc-snippets', 'coc-sql',
+    \ 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-sql',
     \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
     \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-prettier',
     \ 'coc-marketplace', 'coc-diagnostic', 'coc-elixir'
@@ -672,6 +674,27 @@ let g:lightline={
 \   },
 \   'colorscheme': 'danger'
 \ }
+
+if has("nvim")
+    let g:symbols_outline = {
+        \ "highlight_hovered_item": v:true,
+        \ "show_guides": v:true,
+        \ "position": 'right',
+        \ "auto_preview": v:true,
+        \ "show_numbers": v:false,
+        \ "show_relative_numbers": v:false,
+        \ "show_symbol_details": v:true,
+        \ "keymaps": {
+            \ "close": "<Esc>",
+            \ "goto_location": "<Cr>",
+            \ "focus_location": "o",
+            \ "hover_symbol": "<C-space>",
+            \ "rename_symbol": "r",
+            \ "code_actions": "a",
+        \ },
+        \ "lsp_blacklist": [],
+    \ }
+endif
 
 " Use <leader><space> to run CocAction to show possible solutions to errors
 " my leader key is `,` so `,<space>` then navigate via jk on the quickfix
