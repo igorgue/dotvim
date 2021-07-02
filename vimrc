@@ -526,7 +526,7 @@ if has("gui_macvim")
     let g:gist_clip_command='pbcopy'
 
     " Font
-    set guifont=Iosevka:h14
+    set guifont=Iosevka:h18
 
     " Don't beep
     set visualbell
