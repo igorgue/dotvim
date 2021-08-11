@@ -454,33 +454,7 @@ if has('nvim') && !exists('g:fzf_layout')
 endif
 
 " fzf layout config
-if !exists("g:gnvim")
-    let g:fzf_layout={ 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
-else
-    let $FZF_DEFAULT_OPTS=' --layout=reverse --margin=1,4'
-    let g:fzf_layout={ 'window': 'call FloatingFZF()' }
-
-    function! FloatingFZF()
-      let buf=nvim_create_buf(v:false, v:true)
-      call setbufvar(buf, '&signcolumn', 'no')
-
-      let height=20
-      let width=120
-      let horizontal=float2nr((&columns - width) / 2)
-      let vertical=13
-
-      let opts={
-            \ 'relative': 'editor',
-            \ 'row': vertical,
-            \ 'col': horizontal,
-            \ 'width': width,
-            \ 'height': height,
-            \ 'style': 'minimal',
-            \ }
-
-      call nvim_open_win(buf, v:true, opts)
-    endfunction
-endif
+let g:fzf_layout={ 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
 
 " Nvim only stuff
 if has('nvim')

@@ -2,11 +2,11 @@ if exists('g:fvim_loaded') && !exists('g:GtkGuiLoaded')
     " Ctrl-ScrollWheel for zooming in/out
     nnoremap <silent> <C-ScrollWheelUp> :set guifont=+<CR>
     nnoremap <silent> <C-ScrollWheelDown> :set guifont=-<CR>
-    "nnoremap <A-CR> :FVimToggleFullScreen<CR>
+    "nnoremap <C-0> :FVimToggleFullScreen<CR>
 
     " Nice cursors
-    FVimCursorSmoothMove v:false
-    FVimCursorSmoothBlink v:false
+    FVimCursorSmoothMove v:true
+    FVimCursorSmoothBlink v:true
 
     " Background composition (NO WORKEE?)
     "FVimBackgroundComposition 'acrylic'   " 'none', 'transparent', 'blur' or 'acrylic'
@@ -18,11 +18,12 @@ if exists('g:fvim_loaded') && !exists('g:GtkGuiLoaded')
     "FVimBackgroundImageOpacity 0.85       " value between 0 and 1, bg image opacity
 
     " Moar configurations
-    " FVimCustomTitleBar v:true
+    "FVimCustomTitleBar v:true
+    FVimFontSubpixel v:true
 
     " Font configuration
     FVimFontLigature v:false
-    FVimFontAutoSnap v:true
+    FVimFontAutoSnap v:false
 
     function Font10()
         set guifont=Iosevka\ Term:h10
@@ -80,9 +81,8 @@ if exists('g:fvim_loaded') && !exists('g:GtkGuiLoaded')
     command! Font25 call Font25()
 
     "Font17
-    set guifont=Iosevka\ Term:h20
+    set guifont=Iosevka\ Term:h18
 
     " Set the mouse so I can copy to clipboard
     set mouse=a
-    set cmdheight=2
 endif
