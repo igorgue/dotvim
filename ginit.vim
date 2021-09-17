@@ -5,8 +5,10 @@ if exists('g:fvim_loaded') && !exists('g:GtkGuiLoaded')
     "nnoremap <C-0> :FVimToggleFullScreen<CR>
 
     " Nice cursors
-    FVimCursorSmoothMove v:true
-    FVimCursorSmoothBlink v:true
+    FVimCursorSmoothMove v:false
+    FVimCursorSmoothBlink v:false
+    FVimUIWildMenu v:true
+    FVimUIPopupMenu v:true
 
     " Background composition (NO WORKEE?)
     "FVimBackgroundComposition 'acrylic'   " 'none', 'transparent', 'blur' or 'acrylic'

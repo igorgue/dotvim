@@ -1,5 +1,4 @@
 {
-  "coc.preferences.highlightTimeout": 200,
   "coc.preferences.messageLevel": "more",
   "diagnostic.enableMessage": "always",
   "diagnostic.level": "hint",

@@ -55,6 +55,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'mattn/gist-vim'
     Plug 'mattn/webapi-vim'
+    Plug 'mhinz/vim-startify'
     Plug 'michaeljsmith/vim-indent-object'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'OmniSharp/omnisharp-vim'
@@ -387,7 +388,7 @@ let g:python_highlight_all=1
 " OmniSharp configuration
 let g:OmniSharp_diagnostic_showid=1
 let g:OmniSharp_highlighting=3
-let g:OmniSharp_diagnostic_overrides='E'
+let g:OmniSharp_diagnostic_overrides='None'
 let g:OmniSharp_popup=1 " Show vim popups or floats
 let g:OmniSharp_selector_findusages='fzf' " Use fzf.vim for ui stuff
 let g:OmniSharp_selector_ui='fzf'
