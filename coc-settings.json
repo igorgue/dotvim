@@ -32,7 +32,8 @@
   "languageserver": {
     "nim": {
       "command": "nimlsp",
-      "filetypes": ["nim"]
+      "filetypes": ["nim"],
+      "trace.server": "verbose"
     }
   }
 }

@@ -63,6 +63,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'preservim/tagbar'
     Plug 'puremourning/vimspector'
+    Plug 'sainnhe/edge'
     Plug 'sheerun/vim-polyglot'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-git'
