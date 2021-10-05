@@ -76,6 +76,8 @@ call plug#begin('~/.config/nvim/plugged')
     if has('nvim')
         Plug 'neovim/nvim-lspconfig'
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+        Plug 'p00f/nvim-ts-rainbow'
         Plug 'simrat39/symbols-outline.nvim'
     endif
 call plug#end()
@@ -544,6 +546,24 @@ if exists("g:gnvim")
 
     " Mouse blinking: on
     set guicursor+=a:blinkon333
+endif
+
+" Eovim
+if exists("g:eovim_running")
+  set guifont=Iosevka\ Term-18
+  let g:eovim_theme_bell_enabled = 1
+  let g:eovim_theme_react_to_key_presses = 1
+  let g:eovim_theme_react_to_caps_lock = 1
+  let g:eovim_cursor_animation_style = 'sinusoidal'
+
+  let g:eovim_theme_completion_styles = {
+      \ 'default': 'font_weight=bold color=#ffffff',
+      \ 'm': 'color=#ff00ff',
+      \ 'v': 'color=#00ffff',
+      \ 'f': 'color=#ffff00',
+      \ 't': 'color=#0000ff',
+      \ 'd': 'color=#0000ff',
+  \}
 endif
 
 " NVIMGtk functions
