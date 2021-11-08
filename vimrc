@@ -46,6 +46,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
     " Keep Plug commands between plug#begin/end.
+    Plug 'AndrewRadev/linediff.vim'
     Plug 'antoinemadec/coc-fzf'
     Plug 'elixir-editors/vim-elixir'
     Plug 'honza/vim-snippets'
