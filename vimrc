@@ -79,7 +79,6 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
         Plug 'p00f/nvim-ts-rainbow'
-        Plug 'simrat39/symbols-outline.nvim'
     endif
 call plug#end()
 
