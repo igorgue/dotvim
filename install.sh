@@ -2,27 +2,35 @@
 
 if [ -d "~/.vim" ]
 then
-    cp -r ~/.vim ~/.vim.old
-    rm -r ~/.vim
+    mv ~/.vim ~/.vim.old
 fi
 
 if [ -d "~/config/nvim" ]
 then
-    cp -r ~/.config/nvim ~/.config/nvim.old
-    rm -r ~/.config/nvim
+    mv ~/.config/nvim ~/.config/nvim.old
 fi
 
-cp ~/.coc.local.vim ~/.coc.local.vim.old
-cp ~/.vimrc.local.vim ~/.vimrc.local.vim.old
+if [ -d "~/.coc.local.vim" ]
+then
+    mv ~/.coc.local.vim ~/.coc.local.vim.old
+fi
 
-rm -r ~/.coc.local.vim
-rm -r ~/.vimrc.local.vim
+if [ -d "~/.vimrc.local.vim" ]
+then
+    mv ~/.vimrc.local.vim ~/.vimrc.local.vim.old
+fi
+
+if [ -d "~/.vimrc" ]
+then
+    mv ~/.vimrc ~/.vimrc.old
+fi
 
 mkdir ~/.vim
 mkdir ~/.config/nvim
 
 cp -r vimrc ~/.vim/vimrc
 cp -r vimrc ~/.config/nvim/init.vim
+cp -r ginit.vim ~/.config/nvim/ginit.vim
 cp -r coc-settings.json ~/.vim/coc-settings.json
 cp -r coc-settings.json ~/.config/nvim/coc-settings.json
 cp -r coc.local.vim ~/.coc.local.vim
