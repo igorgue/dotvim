@@ -28,62 +28,62 @@ if exists('g:fvim_loaded') && !exists('g:GtkGuiLoaded')
     FVimFontAutoSnap v:false
 
     function Font10()
-        set guifont=Iosevka\ Term:h10
+        set guifont=Iosevka:h10
     endfunction
     command! Font10 call Font10()
 
     function Font11()
-        set guifont=Iosevka\ Term:h10
+        set guifont=Iosevka:h10
     endfunction
     command! Font11 call Font11()
 
     function Font12()
-        set guifont=Iosevka\ Term:h12
+        set guifont=Iosevka:h12
     endfunction
     command! Font12 call Font12()
 
     function Font13()
-        set guifont=Iosevka\ Term:h13
+        set guifont=Iosevka:h13
     endfunction
     command! Font13 call Font13()
 
     function Font14()
-        set guifont=Iosevka\ Term:h14
+        set guifont=Iosevka:h14
     endfunction
     command! Font14 call Font14()
 
     function Font15()
-        set guifont=Iosevka\ Term:h15
+        set guifont=Iosevka:h15
     endfunction
     command! Font15 call Font15()
 
     function Font16()
-        set guifont=Iosevka\ Term:h16
+        set guifont=Iosevka:h16
     endfunction
     command! Font16 call Font16()
 
     function Font17()
-        set guifont=Iosevka\ Term:h17
+        set guifont=Iosevka:h17
     endfunction
     command! Font17 call Font17()
 
     function Font18()
-        set guifont=Iosevka\ Term:h18
+        set guifont=Iosevka:h18
     endfunction
     command! Font18 call Font18()
 
     function Font20()
-        set guifont=Iosevka\ Term:h20
+        set guifont=Iosevka:h20
     endfunction
     command! Font20 call Font20()
 
     function Font25()
-        set guifont=Iosevka\ Term:h25
+        set guifont=Iosevka:h25
     endfunction
     command! Font25 call Font25()
 
     "Font17
-    set guifont=Iosevka\ Term:h18
+    set guifont=Iosevka:h18
 
     " Set the mouse so I can copy to clipboard
     set mouse=a

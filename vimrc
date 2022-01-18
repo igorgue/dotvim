@@ -515,7 +515,7 @@ endif
 
 " Gvim
 if has('gui_running') && has('gui_gtk3')
-    set guifont=Iosevka\ Term\ 14
+    set guifont=Iosevka\ 14
 
     let g:menu_hidden=0
     function! ToggleMenu()
@@ -552,7 +552,7 @@ endif
 
 " Eovim
 if exists("g:eovim_running")
-  set guifont=Iosevka\ Term-18
+  set guifont=Iosevka-18
   let g:eovim_theme_bell_enabled = 1
   let g:eovim_theme_react_to_key_presses = 1
   let g:eovim_theme_react_to_caps_lock = 1
@@ -574,42 +574,42 @@ if exists('g:GtkGuiLoaded')
 
     " Setup fonts
     function Font10()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 10')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 10')
     endfunction
     command! Font10 call Font10()
 
     function Font11()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 11')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 11')
     endfunction
     command! Font11 call Font11()
 
     function Font12()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 12')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 12')
     endfunction
     command! Font12 call Font12()
 
     function Font13()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 13')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 13')
     endfunction
     command! Font13 call Font13()
 
     function Font14()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 14')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 14')
     endfunction
     command! Font14 call Font14()
 
     function Font15()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 15')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 15')
     endfunction
     command! Font15 call Font15()
 
     function Font16()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 16')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 16')
     endfunction
     command! Font16 call Font16()
 
     function Font25()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 25')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 25')
     endfunction
     command! Font25 call Font25()
 
