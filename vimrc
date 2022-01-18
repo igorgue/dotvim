@@ -74,12 +74,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-python/python-syntax'
 
     " Nvim only pluggins
-    if has('nvim')
-        Plug 'neovim/nvim-lspconfig'
-        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-        Plug 'p00f/nvim-ts-rainbow'
-    endif
+    " Disabling these plugins for now, I need to investigate why they don't
+    " work
+    "if has('nvim')
+        "Plug 'neovim/nvim-lspconfig'
+        "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+        "Plug 'p00f/nvim-ts-rainbow'
+    "endif
 call plug#end()
 
 " Coc default extensions
