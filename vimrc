@@ -74,14 +74,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-python/python-syntax'
 
     " Nvim only pluggins
-    " Disabling these plugins for now, I need to investigate why they don't
-    " work
-    "if has('nvim')
-        "Plug 'neovim/nvim-lspconfig'
-        "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-        "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-        "Plug 'p00f/nvim-ts-rainbow'
-    "endif
+    if has('nvim')
+        Plug 'neovim/nvim-lspconfig'
+        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+        Plug 'p00f/nvim-ts-rainbow'
+    endif
 call plug#end()
 
 " Coc default extensions
@@ -721,6 +719,21 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 if filereadable(expand("~/.coc.local.vim"))
     source ~/.coc.local.vim
 endif
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+    },
+    rainbow = {
+        enable = true,
+        -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+        max_file_lines = nil, -- Do not enable for files with more than n lines, int
+        -- colors = {}, -- table of hex strings
+        -- termcolors = {} -- table of colour name strings
+    }
+}
+EOF
 
 " Extra quirks that I like to get rid of
 set cmdheight=1
