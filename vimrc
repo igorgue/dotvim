@@ -75,8 +75,11 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Nvim only pluggins
     if has('nvim')
+        Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
         Plug 'neovim/nvim-lspconfig'
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        Plug 'nvim-lua/plenary.nvim'
+        Plug 'nvim-telescope/telescope.nvim'
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
         Plug 'p00f/nvim-ts-rainbow'
     endif
@@ -254,6 +257,15 @@ else
   map <C-5> :noh<CR>
 endif
 
+" Better mappings anyways
+if has("nvim")
+    map <leader>1 :CHADopen<CR>
+else
+    map <leader>1 :NERDTreeToggle<CR>
+endif
+map <leader>2 :TagbarToggle<CR>
+map <leader>3 :noh<CR>
+
 " Window movement without the extra ctrl+w press only ctrl+(h,j,k,l)
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
@@ -261,10 +273,15 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Fzf mappings, since I don't use ctrl+p, ctrl+n or ctrl+f to go up and down
-nmap <C-p> :GFiles<CR>
-nmap <C-n> :Files<CR>
-nmap <C-f> :Rg<CR>
-nmap <C-b> :Buffers<CR>
+if has("nvim")
+    nmap <C-p> :Telescope git_files<CR>
+    nmap <C-n> :Telescope find_files<CR>
+    nmap <C-m> :Telescope live_grep<CR>
+else
+    nmap <C-p> :GFiles<CR>
+    nmap <C-n> :Files<CR>
+    nmap <C-m> :Rg<CR>
+endif
 
 " Map ,e to open files in the same directory as the current file
 map <leader>e :e <C-R>=expand("%:h")<cr>/
@@ -458,7 +475,7 @@ if has('nvim') && !exists('g:fzf_layout')
 endif
 
 " fzf layout config
-let g:fzf_layout={ 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
+"let g:fzf_layout={ 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
 
 " Nvim only stuff
 if has('nvim')
@@ -513,7 +530,7 @@ endif
 
 " Gvim
 if has('gui_running') && has('gui_gtk3')
-    set guifont=Iosevka\ 14
+    set guifont=Iosevka\ Term\ 14
 
     let g:menu_hidden=0
     function! ToggleMenu()
@@ -550,7 +567,7 @@ endif
 
 " Eovim
 if exists("g:eovim_running")
-  set guifont=Iosevka-18
+  set guifont=Iosevka\ Term-18
   let g:eovim_theme_bell_enabled = 1
   let g:eovim_theme_react_to_key_presses = 1
   let g:eovim_theme_react_to_caps_lock = 1
@@ -572,42 +589,42 @@ if exists('g:GtkGuiLoaded')
 
     " Setup fonts
     function Font10()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 10')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 10')
     endfunction
     command! Font10 call Font10()
 
     function Font11()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 11')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 11')
     endfunction
     command! Font11 call Font11()
 
     function Font12()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 12')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 12')
     endfunction
     command! Font12 call Font12()
 
     function Font13()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 13')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 13')
     endfunction
     command! Font13 call Font13()
 
     function Font14()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 14')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 14')
     endfunction
     command! Font14 call Font14()
 
     function Font15()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 15')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 15')
     endfunction
     command! Font15 call Font15()
 
     function Font16()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 16')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 16')
     endfunction
     command! Font16 call Font16()
 
     function Font25()
-        call rpcnotify(1, 'Gui', 'Font', 'Iosevka 25')
+        call rpcnotify(1, 'Gui', 'Font', 'Iosevka Term 25')
     endfunction
     command! Font25 call Font25()
 
