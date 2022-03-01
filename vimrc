@@ -738,6 +738,7 @@ if filereadable(expand("~/.coc.local.vim"))
     source ~/.coc.local.vim
 endif
 
+if has("nvim")
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
     highlight = {
@@ -752,6 +753,7 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 EOF
+endif
 
 " Extra quirks that I like to get rid of
 set cmdheight=1
