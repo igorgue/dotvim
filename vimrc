@@ -406,9 +406,9 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 let g:python_highlight_all=1
 
 " OmniSharp configuration
-let g:OmniSharp_diagnostic_showid=1
+"let g:OmniSharp_diagnostic_showid=1
 let g:OmniSharp_highlighting=3
-let g:OmniSharp_diagnostic_overrides='None'
+"let g:OmniSharp_diagnostic_overrides='None'
 let g:OmniSharp_popup=1 " Show vim popups or floats
 let g:OmniSharp_selector_findusages='fzf' " Use fzf.vim for ui stuff
 let g:OmniSharp_selector_ui='fzf'
@@ -419,6 +419,7 @@ let g:OmniSharp_timeout=60000 " Basically no timeout
 "let g:OmniSharp_server_type='roslyn'
 "let g:OmniSharp_server_use_mono=0
 "let g:OmniSharp_want_snippet=0
+let g:OmniSharp_server_use_net6=1
 
 augroup omnisharp_commands
     autocmd!
@@ -475,7 +476,7 @@ if has('nvim') && !exists('g:fzf_layout')
 endif
 
 " fzf layout config
-"let g:fzf_layout={ 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
+let g:fzf_layout={ 'window': { 'width': 0.8, 'height': 0.5, 'border': 'sharp' } }
 
 " Nvim only stuff
 if has('nvim')
