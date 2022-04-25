@@ -75,7 +75,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Nvim only pluggins
     if has('nvim')
-        Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
         Plug 'neovim/nvim-lspconfig'
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         Plug 'nvim-lua/plenary.nvim'
@@ -257,12 +256,8 @@ else
   map <C-5> :noh<CR>
 endif
 
-" Better mappings anyways
-if has("nvim")
-    map <leader>1 :CHADopen<CR>
-else
-    map <leader>1 :NERDTreeToggle<CR>
-endif
+" Better mappings
+map <leader>1 :NERDTreeToggle<CR>
 map <leader>2 :TagbarToggle<CR>
 map <leader>3 :noh<CR>
 
