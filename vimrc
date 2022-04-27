@@ -38,9 +38,6 @@ if exists('g:vscode')
     set smartcase
     set wildignorecase
 
-    set omnifunc=syntaxcomplete#Complete
-    let g:omnicomplete_fetch_full_documentation=1
-
     finish
 endif
 
@@ -200,7 +197,8 @@ let g:NERDCustomDelimiters={
     \ 'python': { 'left': '# ', 'right': '' },
     \ 'ruby': { 'left': '# ', 'right': '' },
     \ 'json': { 'left': '// ', 'right': '' },
-    \ 'javascript': { 'left': '// ', 'right': '' }
+    \ 'javascript': { 'left': '// ', 'right': '' },
+    \ 'cs': { 'left': '// ', 'right': '' }
 \ }
 
 " Add support for jsonc
@@ -256,7 +254,7 @@ else
   map <C-5> :noh<CR>
 endif
 
-" Better mappings
+" Better mappings anyways
 map <leader>1 :NERDTreeToggle<CR>
 map <leader>2 :TagbarToggle<CR>
 map <leader>3 :noh<CR>
@@ -270,12 +268,12 @@ nmap <C-l> <C-w>l
 " Fzf mappings, since I don't use ctrl+p, ctrl+n or ctrl+f to go up and down
 if has("nvim")
     nmap <C-p> :Telescope git_files<CR>
+    nmap <S-C-p> :Telescope live_grep<CR>
     nmap <C-n> :Telescope find_files<CR>
-    nmap <C-m> :Telescope live_grep<CR>
 else
     nmap <C-p> :GFiles<CR>
+    nmap <S-C-p> :Rg<CR>
     nmap <C-n> :Files<CR>
-    nmap <C-m> :Rg<CR>
 endif
 
 " Map ,e to open files in the same directory as the current file
