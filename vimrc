@@ -211,7 +211,20 @@ set backspace=indent,eol,start
 set modeline
 
 " Use zsh as shell
-set shell=zsh
+if has("win32")
+    set shell=powershell
+    set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
+    set shellpipe=\|
+    set shellredir=\|\ Out-File\ -Encoding\ UTF8
+    set shellquote=
+    set shellxquote=
+else
+    if executable("zsh")
+        set shell=zsh
+    else
+        set shell=bash
+    endif
+endif
 
 " Better mapleader
 let mapleader=","
