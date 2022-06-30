@@ -49,20 +49,25 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'honza/vim-snippets'
     Plug 'igorgue/danger'
     Plug 'itchyny/lightline.vim'
+    Plug 'jparise/vim-graphql'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'leafgarland/typescript-vim'
     Plug 'mattn/gist-vim'
     Plug 'mattn/webapi-vim'
     Plug 'mhinz/vim-startify'
     Plug 'michaeljsmith/vim-indent-object'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'OmniSharp/omnisharp-vim'
+    Plug 'pangloss/vim-javascript'
+    Plug 'peitalin/vim-jsx-typescript'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/nerdtree'
     Plug 'preservim/tagbar'
     Plug 'puremourning/vimspector'
     Plug 'sainnhe/edge'
     Plug 'sheerun/vim-polyglot'
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-git'
     Plug 'tpope/vim-speeddating'
@@ -78,6 +83,8 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'nvim-telescope/telescope.nvim'
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
         Plug 'p00f/nvim-ts-rainbow'
+        Plug 'kyazdani42/nvim-web-devicons'
+        Plug 'romgrk/barbar.nvim'
     endif
 call plug#end()
 
@@ -88,7 +95,8 @@ let g:coc_global_extensions=[
     \ 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-sql',
     \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
     \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-prettier',
-    \ 'coc-marketplace', 'coc-diagnostic', 'coc-elixir'
+    \ 'coc-marketplace', 'coc-diagnostic', 'coc-elixir',
+    \ 'coc-rls'
 \ ]
 
 " My theme: Danger
