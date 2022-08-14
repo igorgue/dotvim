@@ -46,6 +46,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'AndrewRadev/linediff.vim'
     Plug 'antoinemadec/coc-fzf'
     Plug 'elixir-editors/vim-elixir'
+    Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
     Plug 'honza/vim-snippets'
     Plug 'igorgue/danger'
     Plug 'itchyny/lightline.vim'
@@ -77,14 +78,16 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Nvim only pluggins
     if has('nvim')
+        Plug 'github/copilot.vim'
+        Plug 'kyazdani42/nvim-web-devicons'
         Plug 'neovim/nvim-lspconfig'
+        Plug 'norcalli/nvim-colorizer.lua'
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         Plug 'nvim-lua/plenary.nvim'
         Plug 'nvim-telescope/telescope.nvim'
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
         Plug 'p00f/nvim-ts-rainbow'
-        Plug 'kyazdani42/nvim-web-devicons'
-        Plug 'romgrk/barbar.nvim'
+        "Plug 'romgrk/barbar.nvim'
     endif
 call plug#end()
 
@@ -96,7 +99,7 @@ let g:coc_global_extensions=[
     \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
     \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-prettier',
     \ 'coc-marketplace', 'coc-diagnostic', 'coc-elixir',
-    \ 'coc-rls'
+    \ 'coc-rls', 'coc-go'
 \ ]
 
 " My theme: Danger
@@ -138,16 +141,29 @@ let NERDTreeShowBookmarks=1
 
 " Tab movement on normal mode via:
 " Tab + j or l (next), k or h (previous), x or q (close), or, n (new)
-nnoremap <silent> <Tab>j :tabnext<CR>
-nnoremap <silent> <Tab>l :tabnext<CR>
+"if has("nvim")
+    "nnoremap <silent> <Tab>j <Cmd>BufferNext<CR>
+    "nnoremap <silent> <Tab>l <Cmd>BufferNext<CR>
 
-nnoremap <silent> <Tab>h :tabprevious<CR>
-nnoremap <silent> <Tab>k :tabprevious<CR>
+    "nnoremap <silent> <Tab>h <Cmd>BufferPrevious<CR>
+    "nnoremap <silent> <Tab>k <Cmd>BufferPrevious<CR>
 
-nnoremap <silent> <Tab>x :tabclose<CR>
-nnoremap <silent> <Tab>q :tabclose<CR>
+    "nnoremap <silent> <Tab>x <Cmd>BufferClose<CR>
+    "nnoremap <silent> <Tab>q <Cmd>BufferClose<CR>
 
-nnoremap <silent> <Tab>n :tabnew<CR>
+    "nnoremap <silent> <Tab>n :tabnew<CR>
+"else
+    nnoremap <silent> <Tab>j :tabnext<CR>
+    nnoremap <silent> <Tab>l :tabnext<CR>
+
+    nnoremap <silent> <Tab>h :tabprevious<CR>
+    nnoremap <silent> <Tab>k :tabprevious<CR>
+
+    nnoremap <silent> <Tab>x :tabclose<CR>
+    nnoremap <silent> <Tab>q :tabclose<CR>
+
+    nnoremap <silent> <Tab>n :tabnew<CR>
+"endif
 
 " Setting 't' also because I keep using it
 nnoremap <silent> tj :tabnext<CR>
@@ -197,6 +213,10 @@ if has("autocmd")
     au FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au FileType xhtml setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufEnter *.tsx setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+    " Fix issue when doing syntax highlight
+    au BufEnter *.html :syntax sync fromstart
 endif
 
 " Extra nerd commenter configs
@@ -339,7 +359,7 @@ endfunction
 command! UnHardMode call UnHardMode()
 command! HardMode call HardMode()
 
-HardMode
+"HardMode
 
 " Set tabs to the thing I say!!!
 function! SetTabs(amount)
@@ -688,6 +708,7 @@ sign define vimspectorPCBP text=o> texthl=Constant
 
 " Lightline
 let g:lightline={
+\   'enable': { 'statusline': 1, 'tabline': 0 },
 \   'active': {
 \       'left': [
 \           [ 'mode', 'paste' ],
@@ -723,6 +744,76 @@ if has("nvim")
         \ },
         \ "lsp_blacklist": [],
     \ }
+
+    " Barbar options
+    " NOTE: If barbar's option dict isn't created yet, create it
+    "let bufferline = get(g:, 'bufferline', {})
+
+    "" Enable/disable animations
+    "let bufferline.animation = v:true
+
+    "" Enable/disable auto-hiding the tab bar when there is a single buffer
+    "let bufferline.auto_hide = v:true
+
+    "" Enable/disable current/total tabpages indicator (top right corner)
+    "let bufferline.tabpages = v:true
+
+    "" Enable/disable close button
+    "let bufferline.closable = v:true
+
+    "" Enables/disable clickable tabs
+    ""  - left-click: go to buffer
+    ""  - middle-click: delete buffer
+    "let bufferline.clickable = v:true
+
+    "" Excludes buffers from the tabline
+    "let bufferline.exclude_ft = ['javascript']
+    "let bufferline.exclude_name = ['package.json']
+
+    "" Enable/disable icons
+    "" if set to 'buffer_number', will show buffer number in the tabline
+    "" if set to 'numbers', will show buffer index in the tabline
+    "" if set to 'both', will show buffer index and icons in the tabline
+    "" if set to 'buffer_number_with_icon', will show buffer number and icons in the tabline
+    "let bufferline.icons = v:true
+
+    "" Sets the icon's highlight group.
+    "" If false, will use nvim-web-devicons colors
+    "let bufferline.icon_custom_colors = v:false
+
+    "" Configure icons on the bufferline.
+    "let bufferline.icon_separator_active = ''
+    "let bufferline.icon_separator_inactive = ''
+    "let bufferline.icon_close_tab = 'x'
+    "let bufferline.icon_close_tab_modified = '*'
+    "let bufferline.icon_pinned = '^'
+
+    "" If true, new buffers will be inserted at the start/end of the list.
+    "" Default is to insert after current buffer.
+    "let bufferline.insert_at_start = v:false
+    "let bufferline.insert_at_end = v:false
+
+    "" Sets the maximum padding width with which to surround each tab.
+    "let bufferline.maximum_padding = 4
+
+    "" Sets the maximum buffer name length.
+    "let bufferline.maximum_length = 30
+
+    "" If set, the letters for each buffer in buffer-pick mode will be
+    "" assigned based on their name. Otherwise or in case all letters are
+    "" already assigned, the behavior is to assign letters in order of
+    "" usability (see order below)
+    "let bufferline.semantic_letters = v:true
+
+    "" New buffer letters are assigned in this order. This order is
+    "" optimal for the qwerty keyboard layout but might need adjustement
+    "" for other layouts.
+    "let bufferline.letters =
+      "\ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
+
+    "" Sets the name of unnamed buffers. By default format is "[Buffer X]"
+    "" where X is the buffer number. But only a static string is accepted here.
+    "let bufferline.no_name_title = v:null
 endif
 
 " Use <leader><space> to run CocAction to show possible solutions to errors
@@ -774,6 +865,10 @@ set cmdheight=1
 set updatetime=300
 set signcolumn=auto
 set noshowmode
+
+if has("nvim")
+    lua require'colorizer'.setup()
+endif
 
 " Include user's local nvim config and rewrites
 if filereadable(expand("~/.vimrc.local.vim"))
