@@ -78,7 +78,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Nvim only pluggins
     if has('nvim')
-        Plug 'github/copilot.vim'
         Plug 'kyazdani42/nvim-web-devicons'
         Plug 'neovim/nvim-lspconfig'
         Plug 'norcalli/nvim-colorizer.lua'
@@ -87,14 +86,13 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'nvim-telescope/telescope.nvim'
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
         Plug 'p00f/nvim-ts-rainbow'
-        "Plug 'romgrk/barbar.nvim'
     endif
 call plug#end()
 
 " Coc default extensions
 let g:coc_global_extensions=[
     \ 'coc-clangd', 'coc-css', 'coc-git', 'coc-highlight',
-    \ 'coc-html', 'coc-json', 'coc-omnisharp', 'coc-pairs',
+    \ 'coc-html', 'coc-json', 'coc-pairs',
     \ 'coc-pyright', 'coc-sh', 'coc-snippets', 'coc-sql',
     \ 'coc-tsserver', 'coc-vetur', 'coc-xml', 'coc-vimlsp',
     \ 'coc-yaml', 'coc-tag', 'coc-dictionary', 'coc-prettier',
@@ -188,6 +186,7 @@ if has("autocmd")
     au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
 
     au FileType less set softtabstop=2 tabstop=2 shiftwidth=2
+    au FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au FileType slim set softtabstop=2 tabstop=2 shiftwidth=2
     au FileType sql set softtabstop=2 tabstop=2 shiftwidth=2
     au FileType cs set softtabstop=4 tabstop=4 shiftwidth=4
@@ -440,9 +439,9 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 let g:python_highlight_all=1
 
 " OmniSharp configuration
-"let g:OmniSharp_diagnostic_showid=1
+let g:OmniSharp_diagnostic_showid=1
 let g:OmniSharp_highlighting=3
-"let g:OmniSharp_diagnostic_overrides='None'
+let g:OmniSharp_diagnostic_overrides='None'
 let g:OmniSharp_popup=1 " Show vim popups or floats
 let g:OmniSharp_selector_findusages='fzf' " Use fzf.vim for ui stuff
 let g:OmniSharp_selector_ui='fzf'
@@ -450,9 +449,9 @@ let g:OmniSharp_timeout=60000 " Basically no timeout
 "let g:OmniSharp_loglevel='debug'
 "let g:OmniSharp_prefer_global_sln=0
 "let g:OmniSharp_server_stdio=0
-"let g:OmniSharp_server_type='roslyn'
-"let g:OmniSharp_server_use_mono=0
-"let g:OmniSharp_want_snippet=0
+let g:OmniSharp_server_type='roslyn'
+let g:OmniSharp_server_use_mono=0
+let g:OmniSharp_want_snippet=1
 let g:OmniSharp_server_use_net6=1
 
 augroup omnisharp_commands

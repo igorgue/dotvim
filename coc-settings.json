@@ -14,9 +14,9 @@
     "python.formatting.provider": "black",
     "python.linting.flake8Args": ["--max-line-length", "200"],
     "python.linting.flake8Enabled": true,
+    "python.venvPath": "~/.env",
     "sql.database": "postgresql",
     "suggest.autoTrigger": "always",
-    "suggest.echodocSupport": true,
     "suggest.enablePreselect": false,
     "suggest.enablePreview": true,
     "suggest.localityBonus": true,
@@ -24,6 +24,8 @@
     "suggest.triggerAfterInsertEnter": true,
     "suggest.triggerCompletionWait": 30,
     "xml.java.home": "/usr/lib/jvm/default-java",
+    "xml.validation.enabled": true,
+    "xml.catalogs": [],
     "json.schemas": [{
             "fileMatch": [".vimspector.json"],
             "url": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json"
@@ -35,5 +37,6 @@
             "filetypes": ["nim"],
             "trace.server": "verbose"
         }
-    }
+    },
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd"
 }
